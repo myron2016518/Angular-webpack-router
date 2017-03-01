@@ -1,0 +1,21 @@
+<div class="login-bg" ng-init="loginOnload()">
+	<div class="login-main">
+		<div class="login-logo clearfix">
+			<img src="../resource/images/logo_lg.png">
+		</div>
+		<div class="login-form">
+			<div class="login-input">
+				<input type="text" class="form-control username" ng-model="form.mobile" name="mobile" placeholder="用户名" autocomplete="off">
+			</div>
+			<div class="login-input">
+				<input type="password" class="form-control password" style="position:absolute;z-index:-999">
+				<input type="password" class="form-control password" ng-model="form.password" name="password" placeholder="密码" autocomplete="off">
+			</div>
+			<div class="login-handle clearfix">
+				<a href="javascript:;"  ng-class="{true:'remember on',false:'remember'}[isRemember]" ng-click="toggleRemember()">记住密码</a>
+				<a href="javascript:;" class="forgot">忘记密码？</span>
+			</div>
+			<a class="login-submit" href="javascript:;" ng-click="login()">登录</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,48 @@
+<div class="patient">
+    <div class="bread-nav">
+        <ul class="clearfix">
+            <li><a href="javascript:;">用户管理</a></li>
+            <li><b>></b></li>
+            <li><a href="javascript:;" class="on">用户列表</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <form name="patientSF" action="" class="ptMT20">
+            <div class="title-span">查找用户</div>
+            <div class="basis-info clearfix">
+                <div class="search">
+                    <span>关键字搜索:</span>
+                    <select ng-model="patientSearchSelect">
+                        <option value="">不限</option>
+                    </select>
+                    <input type="text" ng-model="patientSearchInput" />
+                    <button ng-click="search()">搜索</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- 表格 -->
+    <div class="content clearfix" style="margin-top: 6px;">
+        <div class="container-fluid swi-table" ng-if="tableConf.recordCount>0">
+            <div class="row">
+                <div ng-repeat="itemHead in tableConf.tableHead" class="thead col-md-{{itemHead.width}}">{{itemHead.name}}</div>
+            </div>
+            <div class="row" ng-repeat="itemTrs in tableConf.tableTr track by $index">
+                <div class="tr col-md-{{tableConf.tableHead[0].width}}">{{$index}}</div>
+                <div class="tr col-md-{{tableConf.tableHead[1].width}}">{{itemTrs.patientId}}</div>
+                <div class="tr col-md-{{tableConf.tableHead[2].width}}">{{itemTrs.accountNo}}</div>
+                <div class="tr col-md-{{tableConf.tableHead[3].width}}">{{itemTrs.mobileNo}}</div>
+                <div class="tr col-md-{{tableConf.tableHead[4].width}}">{{itemTrs.sourceEnterprise}}</div>
+                <div class="tr col-md-{{tableConf.tableHead[5].width}}">{{itemTrs.sourceStore}}</div>
+                <div class="tr col-md-{{tableConf.tableHead[6].width}}"><a ui-sref="main.patientDetail({Id:itemTrs.patientId})">详情</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="patientDisable({{itemTrs.patientId}});">禁用</a></div>
+            </div>
+        </div>
+        <div class="container-fluid swi-table" ng-if="tableConf.recordCount==0">
+            <div class="row">
+                <div class="noMore col-md-12">暂无数据！</div>
+            </div>
+        </div>
+    </div>
+    <!-- 分页 -->
+    <div ui-pagination conf="conf"></div>
+</div>

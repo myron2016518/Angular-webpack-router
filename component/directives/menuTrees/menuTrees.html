@@ -1,0 +1,13 @@
+<ul>
+	<li ng-repeat="item in FMenuList track by $index" ng-click="toggleDisplay(item[0])">
+		{{item[1]}}
+		<ul id="menu-{{item[0]}}" style="display:none;">
+			<li ng-repeat="sItem in SMenuList[$index] track by $index" ui-sref="{{sItem[3]}}">
+				{{sItem[1]}}
+			</li>
+		</ul>
+	</li>
+</ul>
+
+
+

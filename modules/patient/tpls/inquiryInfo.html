@@ -1,0 +1,76 @@
+<div class="patient">
+    <div class="bread-nav">
+        <ul class="clearfix">
+            <li><a href="javascript:;">用户管理</a></li>
+            <li><b>></b></li>
+            <li><a href="javascript:;">用户列表</a></li>
+            <li><b>></b></li>
+            <li><a href="javascript:;">用户详情</a></li>
+            <li><b>></b></li>
+            <li><a href="javascript:;" class="on">问诊信息</a></li>
+        </ul>
+    </div>
+    <div class="content container-fluid">
+        <div class="row ptMT20">
+            <div class="title-span col-md-4" style="margin-left: 15px;">基本统计</div>
+            <div class="pull-right">
+                查看用户其他信息 :
+                <select>
+                    <option value="1">挂号信息</option>
+                </select>
+                <button class="btn search-btn" ng-click="searchOtherInfo('main.patientRegister')">搜素</button>
+            </div>
+        </div>
+        <div class="basis-info clearfix">
+            <div class="row">
+                <span class="col-md-2">问诊次数 : <span class="fZ24">{{pInquiryInfo.inquiryNum}}</span>次</span>
+                <span class="col-md-2">成功问诊 : <span class="fZ24">{{pInquiryInfo.inquirySuccessNum}}</span>次</span>
+                <span class="col-md-2">失败问诊 : <span class="fZ24">{{pInquiryInfo.inquiryFailNum}}</span>次</span>
+                <span class="col-md-2">视频问诊 : <span class="fZ24">{{pInquiryInfo.videoInquiryNum}}</span>次</span>
+                <span class="col-md-2">图文问诊 : <span class="fZ24">{{pInquiryInfo.iamgeInquiryNum}}</span>次</span>
+            </div>
+            <div class="row ptMT15">
+                <span class="col-md-2">收费问诊 : <span class="fZ24">{{pInquiryInfo.chargeInquiryNum}}</span>次</span>
+                <span class="col-md-2">免费问诊 : <span class="fZ24">{{pInquiryInfo.freeInquiryNum}}</span>次</span>
+                <span class="col-md-2">问诊科室 : <span class="fZ24">{{pInquiryInfo.inquiryDepartmentNum}}</span>个</span>
+                <span class="col-md-2">问诊医生 : <span class="fZ24">{{pInquiryInfo.inquiryDoctorNum}}</span>名</span>
+            </div>
+        </div>
+        <div class="title-span ptMT20">筛选订单范围</div>
+        <div class="basis-info clearfix" style="padding-top:10px;">
+            <form name="inquirySF" action="" class="ptMT20">
+                选择日期范围 :
+                <input type="date" id="exampleInput" name="input" ng-model="value" /> -
+                <input type="date" id="exampleInput" name="input" ng-model="value" />
+                <button class="btn search-btn" ng-click="search()">确定</button>
+            </form>
+        </div>
+        <div class="title-span ptMT20">问诊订单列表</div>
+        <!-- 表格 -->
+        <div class="clearfix">
+            <div class="container-fluid swi-table" ng-if="tableConf.totalNum>0">
+                <div class="row">
+                    <div ng-repeat="itemHead in tableConf.tableHead" class="thead col-md-{{itemHead.width}}">{{itemHead.name}}</div>
+                </div>
+                <div class="row" ng-repeat="itemTrs in tableConf.tableTr track by $index">
+                    <div class="tr col-md-{{tableConf.tableHead[0].width}}">{{$index}}</div>
+                    <div class="tr col-md-{{tableConf.tableHead[1].width}}">{{itemTrs.orderNo}}</div>
+                    <div class="tr col-md-{{tableConf.tableHead[2].width}}">{{itemTrs.area}}</div>
+                    <div class="tr col-md-{{tableConf.tableHead[3].width}}">{{itemTrs.hospitalName}}</div>
+                    <div class="tr col-md-{{tableConf.tableHead[4].width}}">{{itemTrs.inqType}}</div>
+                    <div class="tr col-md-{{tableConf.tableHead[5].width}}">{{itemTrs.isCharge}}</div>
+                    <div class="tr col-md-{{tableConf.tableHead[6].width}}">{{itemTrs.deptName}}</div>
+                    <div class="tr col-md-{{tableConf.tableHead[7].width}}">{{itemTrs.doctorName}}</div>
+                    <div class="tr col-md-{{tableConf.tableHead[8].width}}">{{itemTrs.queueDate}}</div>
+                </div>
+            </div>
+            <div class="container-fluid swi-table" ng-if="tableConf.totalNum==0">
+                <div class="row">
+                    <div class="noMore col-md-12">暂无数据！</div>
+                </div>
+            </div>
+        </div>
+        <!-- 分页 -->
+        <div ui-pagination conf="conf"></div>
+    </div>
+</div>

@@ -1,0 +1,195 @@
+/*首页css*/
+html,body{
+    font-family: "微软雅黑";
+}
+.main{
+  max-width: 100%;
+  overflow: hidden;
+}
+.swi-top{
+    height: 60px;
+    background: #f3f3f3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    border-bottom: 1px solid #e1e1e1;
+}
+.swi-left{
+    position: fixed;
+    top: 60px;
+    bottom:0;
+    width: 200px;
+    background: #666;
+    z-index: 999;
+}
+.swi-right{
+    position: absolute;
+    left:200px;
+    right: 0;
+    top: 60px;
+}
+
+.top-info{
+    line-height: 60px;
+    font-size: 16px;
+    color: #666;
+    padding-right: 50px;
+}
+.user{
+    float: left;
+    text-indent: 45px;
+    background: url(../images/icon_avatar.png) no-repeat 0 16px;
+}
+.logout{
+    float: left;
+    margin-left: 40px;
+    text-indent: 35px;
+    background: url(../images/icon_quit.png) no-repeat 0 16px;
+}
+.logout a{
+    display: block;
+    color: #666;
+    text-decoration: none;
+}
+
+.fold{
+    position: absolute;
+    top: 50%;
+    margin-top: -65px;
+    right: -14px;
+    width: 28px;
+    height: 130px;
+    background: url(../images/fold.png) no-repeat;
+    display: block;
+    cursor:pointer;
+}
+.unfold{
+    position: absolute;
+    top: 50%;
+    margin-top: -65px;
+    right: -14px;
+    width: 28px;
+    height: 130px;
+    background: url(../images/unfold.png) no-repeat;
+    display: none;
+    cursor:pointer;
+}
+.swi-unfold .fold{
+    display: block;
+}
+.swi-fold .unfold{
+    display: block;
+}
+.swi-fold .swi-left{
+    width: 14px;
+}
+.swi-fold .menu{
+    display: none;
+}
+.swi-fold .swi-right{
+    left: 14px;
+}
+
+
+
+
+.logo{
+    width: 200px;
+    height: 60px;
+    background: #09cacd;
+    text-align: center;
+    line-height: 60px;
+}
+.logo img{
+    vertical-align: middle;
+    height: 50px;
+    width: 75px;
+}
+
+.login-bg{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #09cacd;
+    z-index: 999
+}
+.login-main{
+    width: 440px;
+    left: 50%;
+    position: absolute;
+    margin-left: -220px;
+    top: 50%;
+    margin-top: -190px;
+}
+.login-logo{
+    margin-bottom: 42px;
+    text-align: center;
+}
+.login-input{
+    margin-top: 8px;
+    margin-bottom: 16px;
+    background: url(../images/input_bg.png);
+    border-radius: 10px;
+}
+.login-input .form-control{
+    height: 50px;
+    border:0;
+    padding-left: 50px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 10px;
+}
+.username{
+    background: url(../images/icon_user.png) no-repeat 14px 10px;
+}
+.password{
+    background: url(../images/icon_password.png) no-repeat 14px 10px;
+}
+.login-input .form-control::-webkit-input-placeholder {
+    color: #d1d1d1;
+}
+.login-input .form-control::-moz-placeholder {
+    color: #d1d1d1;
+}
+.login-handle{
+    margin-bottom: 40px;
+}
+.login-handle a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+.remember{
+    float: left;
+    padding-left: 35px;
+    background: url(../images/icon_check-box.png) no-repeat 5px 2px;
+}
+.remember.on{
+    background: url(../images/icon_check-box_select.png) no-repeat 5px 2px;
+}
+.forgot{
+    float: right;
+}
+.login-form .login-submit{
+    height: 50px;
+    line-height: 50px;
+    background: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    letter-spacing: 5px;
+}
+.login-form .login-submit:active{
+    color: #000;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}

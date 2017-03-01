@@ -1,0 +1,254 @@
+.patient
+{
+    font-size: 16px;
+    .bread-nav
+    {
+        padding: 30px 40px 0 40px;
+    }
+    .bread-nav ul
+    {
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+    }
+    .bread-nav ul li
+    {
+        float: left;
+    }
+    .bread-nav ul li a
+    {
+        text-decoration: none;
+
+        color: #09cacd;
+    }
+    .bread-nav ul li a.on
+    {
+        color: #666;
+    }
+    .bread-nav ul li b
+    {
+        font-weight: normal;
+
+        margin: 0 10px;
+
+        color: #666;
+    }
+    .content
+    {
+        padding: 0 40px;
+    }
+    .ptMT15
+    {
+        margin-top: 15px;
+    }
+    .ptMT20
+    {
+        margin-top: 30px;
+    }
+    .title-span
+    {
+        font-size: 18px;
+        line-height: 30px;
+
+        width: 120px;
+        height: 30px;
+
+        text-align: center;
+
+        color: #fff;
+        border-radius: 6px;
+        background: #a0a0a0;
+    }
+    .basis-info
+    {
+        width: 100%;
+        margin-top: 24px;
+        padding: 30px;
+
+        border: 1px solid #d1d1d1;
+        border-radius: 6px;
+    }
+    .search-btn
+    {
+        height: 30px;
+        margin-top: -3px;
+        padding: 3px 12px;
+
+        color: #fff;
+        background: #09cacd;
+    }
+    .detailBtnList
+    {
+        font-size: 20px;
+
+        width: 140px;
+        height: 60px;
+        margin-right: 40px;
+
+        text-align: center;
+
+        color: #09cacd;
+        border: 1px solid #09cacd;
+        border-radius: 6px;
+        background-color: white;
+    }
+    .disableBtn
+    {
+        color: #a1a1a1;
+        border-color: #a1a1a1;
+    }
+    /*table CSS*/
+    .swi-table
+    {
+        overflow: hidden;
+
+        margin-top: 24px;
+        margin-bottom: 35px;
+
+        color: #666;
+        border: 1px solid #d1d1d1;
+        border-radius: 10px;
+    }
+    .thead,
+    .tr
+    {
+        font-weight: normal;
+
+        padding: 13px 8px;
+
+        text-align: center;
+
+        border-right: 1px solid #d1d1d1;
+        border-bottom: 0;
+        background: #eee;
+    }
+    .tr
+    {
+        border-top: 1px solid #d1d1d1;
+        background: white;
+    }
+    .swi-table a
+    {
+        text-decoration: none;
+
+        color: #ff9204;
+    }
+    .fZ24{
+        font-size: 24px;
+    }
+    .noMore
+    {
+        margin: 0;
+        padding: 15px 0;
+
+        text-align: center;
+
+        border-top: 1px solid #d1d1d1;
+    }
+    /*table css end*/
+    /*分页CSS*/
+    .pageConf,
+    .pageConf *
+    {
+        display: inline;
+    }
+    .ui-page
+    {
+        display: inline-flex;
+        float: right;
+
+        padding: 0 24px 40px 24px;
+    }
+    .pagination
+    {
+        margin: 0;
+    }
+    .pagination-page,
+    .name
+    {
+        line-height: 32px;
+    }
+    .ui-page > *
+    {
+        margin-right: 10px;
+    }
+    .ui-page input[type='text'],
+    .ui-page select
+    {
+        line-height: 24px;
+
+        width: 24px;
+        height: 24px;
+        margin: 0 4px;
+
+        text-align: center;
+
+        border: 1px solid #eee;
+        border-radius: 3px;
+        background-color: #fff;
+    }
+    .ui-page select
+    {
+        width: auto ;
+    }
+    .go
+    {
+        line-height: 24px;
+
+        width: 67px;
+        height: 24px;
+
+        text-align: center;
+
+        color: #fff;
+        border: 0;
+        border-radius: 5px;
+        background: #09cacd;
+    }
+    .search
+    {
+        span
+        {
+            line-height: 30px;
+
+            padding-right: 24px;
+
+            color: #666;
+        }
+        select
+        {
+            width: 140px;
+            height: 30px;
+            margin-right: 40px;
+
+            text-align: center;
+
+            border: 1px solid #d1d1d1;
+            border-radius: 5px;
+        }
+        input
+        {
+            width: 510px;
+            height: 30px;
+
+            border: 1px solid #d1d1d1;
+            border-radius: 5px;
+        }
+        button
+        {
+            line-height: 30px;
+
+            width: 80px;
+            height: 30px;
+            margin-left: 60px;
+
+            text-align: center;
+
+            color: #fff;
+            border: 0;
+            border-radius: 4px;
+            background: #09cacd;
+        }
+    }
+}

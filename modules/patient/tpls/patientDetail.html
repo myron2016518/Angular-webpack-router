@@ -1,0 +1,63 @@
+<div class="patient">
+    <div class="bread-nav">
+        <ul class="clearfix">
+            <li><a href="javascript:;">用户管理</a></li>
+            <li><b>></b></li>
+            <li><a href="javascript:;">用户列表</a></li>
+            <li><b>></b></li>
+            <li><a href="javascript:;" class="on">用户详情</a></li>
+        </ul>
+    </div>
+    <div class="content container-fluid">
+        <div class="title-span ptMT20">注册信息</div>
+        <div class="basis-info clearfix">
+            <div class="row">
+                <span class="col-md-3">注册手机号 : {{pDetailInfo.registerInfo.mobileNo}}</span>
+                <span class="col-md-3">用户账户 : {{pDetailInfo.registerInfo.accountNo}}</span>
+                <span class="col-md-3">用户ID : {{pDetailInfo.registerInfo.patientId}}</span>
+            </div>
+            <div class="row ptMT15">
+                <span class="col-md-3">来源门店 : {{pDetailInfo.registerInfo.sourceStore}}</span>
+                <span class="col-md-6">门店所属连锁 : {{pDetailInfo.registerInfo.sourceEnterprise}}</span>
+            </div>
+        </div>
+        <div class="title-span ptMT20">基本资料</div>
+        <div class="basis-info clearfix">
+            <div class="row">
+                <span class="col-md-1">姓名 : {{pDetailInfo.baseInfo.name}}</span>
+                <span class="col-md-1">性别 : {{pDetailInfo.baseInfo.sex}}</span>
+                <span class="col-md-2">婚姻状态 : {{pDetailInfo.baseInfo.marriage}}</span>
+                <span class="col-md-2">出生日期 : {{pDetailInfo.baseInfo.birthday}}</span>
+                <span class="col-md-1">年龄 : {{pDetailInfo.baseInfo.age}}</span>
+                <span class="col-md-1">身高 : {{pDetailInfo.baseInfo.height}}CM</span>
+            </div>
+            <div class="row ptMT15">
+                <span class="col-md-1">体重 : {{pDetailInfo.baseInfo.weight}}KG</span>
+                <span class="col-md-1">血型 : {{pDetailInfo.baseInfo.blood}}</span>
+                <span class="col-md-2">联系电话 : {{pDetailInfo.baseInfo.contactNo}}</span>
+                <span class="col-md-2">身份证号 : {{pDetailInfo.baseInfo.idNo}}</span>
+            </div>
+        </div>
+        <div class="title-span ptMT20">个人数据</div>
+        <div class="basis-info clearfix">
+            <div class="row">
+                <span class="col-md-2">挂号次数 : <span class="fZ24">{{pDetailInfo.personalData.registerNum}}</span>次</span>
+                <span class="col-md-2">问诊次数 : <span class="fZ24">{{pDetailInfo.personalData.inquiryNum}}</span>次</span>
+                <span class="col-md-2">健康检测次数 : <span class="fZ24">{{pDetailInfo.personalData.healthCheckNum}}</span>次</span>
+                <span class="col-md-2">购药次数 : <span class="fZ24">{{pDetailInfo.personalData.medicineNum}}</span>次</span>
+            </div>
+            <div class="row ptMT15">
+                <span class="col-md-2">购药总额 : <span class="fZ24">{{pDetailInfo.personalData.medicineSum}}</span>元</span>
+                <span class="col-md-2">最大单笔金额 : <span class="fZ24">{{pDetailInfo.personalData.maxMedicineSum}}</span>元</span>
+                <span class="col-md-2">最近到店日期 : {{pDetailInfo.personalData.lastLoginDate}}</span>
+            </div>
+        </div>
+        <div class="ptMT20">
+            <button class="detailBtnList" ui-sref="main.patientRegister({Id:pDetailInfo.registerInfo.patientId})">挂号信息</button>
+            <button class="detailBtnList" ui-sref="main.patientInquiry({Id:pDetailInfo.registerInfo.patientId})">问诊信息</button>
+            <button class="detailBtnList disableBtn">健康检测信息</button>
+            <button class="detailBtnList disableBtn">关联门店信息</button>
+            <button class="detailBtnList disableBtn">活跃信息</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div ng-class="{true:'swi-fold',false:'swi-unfold'}[fold]">
+    <div class="swi-top clearfix">
+        <div class="logo pull-left">
+            <img src="./resource/images/logo_small.png" style="height:20px; width:150px;">
+        </div>
+        <div class="top-info pull-right">
+            <div class="user" ui-sref='login'>
+                admin
+            </div>
+            <div class="logout">
+                <a href="javascript:;" ng-click="logout()">退出</a>
+            </div>
+        </div>
+    </div>
+    <div class="swi-left">
+        <menu-trees menu-list=menuList class="menu"></menu-trees>
+        <div class="fold" ng-click="toggleFold()"></div>
+        <div class="unfold" ng-click="toggleFold()"></div>
+    </div>
+    <div class="swi-right">
+        <div class="main" ui-view></div>
+    </div>
+</div>

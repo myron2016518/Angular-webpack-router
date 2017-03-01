@@ -1,0 +1,78 @@
+<div class="interrogation">
+  <div class="current">
+    <span>处方管理</span><i> > </i><span>处方列表</span>
+  </div>
+  <button class="interrogation-btn-1">查询处方订单</button>
+  <div class="screen-list">
+    <ul>
+      <li>
+        <span>问诊状态:</span>
+        <select>
+            <option value="">已问诊</option>
+        </select>
+      </li>
+      <li>
+        <span>问诊方式:</span>
+        <select>
+            <option value="">视频问诊</option>
+        </select>
+      </li>
+      <li>
+        <span>处方状态:</span>
+        <select>
+            <option value="">待审核</option>
+        </select>
+      </li>
+    </ul>
+    <div class="date">
+      <span>日期:</span>
+      <button>选择开始日期</button>
+      <i>-</i>
+      <button>选择结束日期</button>
+    </div>
+    <div class="search">
+      <span>关键字搜索:</span>
+      <select>
+          <option value="">手机号</option>
+      </select>
+      <input type="text"  />
+      <button>搜索</button>
+    </div>
+  </div>
+
+  <button class="interrogation-btn-1">挂号订单</button>
+  <div class="interrogation-list">
+      <table>
+          <tr>
+            <td>序号</td>
+            <td>医院</td>
+            <td>患者</td>
+            <td>诊断医生</td>
+            <td>审核药师</td>
+            <td>问诊方式</td>
+            <td>问诊状态</td>
+            <td>处方审核</td>
+            <td>提交问诊时间</td>
+            <td>操作</td>
+          </tr>
+          <tr ng-repeat="x in list">
+            <td>{{x.Serial}}</td>
+            <td>{{x.Hospital}}</td>
+            <td>{{x.Patient}}</td>
+            <td>{{x.Doctor}}</td>
+            <td>{{x.examine}}</td>
+            <td>{{x.mode}}</td>
+            <td>{{x.state}}</td>
+            <td>{{x.mine}}</td>
+            <td>{{x.time|date:'yyyy-MM-dd'}}<br />{{x.time|date:'HH:mm'}}</td>
+            <td><a ui-sref="main.interrogationDetails({id:x.id})">{{x.operation}}</a></td>
+          </tr>
+      </table>
+  </div>
+  <div class="list-total">
+    <button><i><img src="../../../../resource/images/download.png" /></i>下载列表</button>
+    <span>处方：252单</span>
+    <span>总计：311单</span>
+  </div>
+  <div ui-pagination conf="conf"></div>
+</div>

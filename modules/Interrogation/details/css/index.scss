@@ -1,0 +1,124 @@
+.interrogationDetails{
+  .screen-list{
+    margin: 0 32px 25px 32px;
+    border-radius: 5px;
+    border: 1px solid #d1d1d1;
+    padding: 23px 30px;
+    overflow: hidden;
+  }
+  .current{
+    padding-top: 30px;
+    padding-left: 32px;
+    padding-bottom: 40px;
+    font-size: 16px;
+    color: #666;
+  }
+  .details-1{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    li{
+      float:left;
+      display: block;
+      width: 30%;
+      color: #666;
+      line-height: 36px;
+      font-size: 16px;
+      span{
+        padding-right: 8px;
+      }
+    }
+  }
+  .details-2{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    li{
+      float:left;
+      display: block;
+      width: 25%;
+      color: #666;
+      line-height: 36px;
+      font-size: 16px;
+      span{
+        padding-right: 8px;
+      }
+    }
+  }
+  .details-3{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    li{
+      display: block;
+      overflow: hidden;
+      width: 100%;
+      color: #666;
+      line-height: 36px;
+      font-size: 16px;
+      span{
+        padding-right: 8px;
+      }
+    }
+    li:nth-child(1){
+      p{
+        float: left;
+        padding-right: 96px;
+      }
+    }
+  }
+  .details-4{
+    display: block;
+    width: auto;;
+    overflow: hidden;
+    flex-grow:3;
+    li{
+      display: block;
+      overflow: hidden;
+      width: 100%;
+      color: #666;
+      line-height: 36px;
+      font-size: 16px;
+      span{
+        padding-right: 8px;
+      }
+    }
+    li:nth-child(1){
+      p{
+        float: left;
+        padding-right: 65px;
+      }
+    }
+    li:nth-child(2){
+      p{
+        float: left;
+        padding-right: 65px;
+      }
+    }
+  }
+  }
+  .details-5{
+    display: block;
+    flex-grow:3;
+    li{
+      float: left;
+      display: block;
+      color: #666;
+      line-height: 36px;
+      font-size: 16px;
+      padding-right: 82px;
+      span{
+        padding-right: 8px;
+      }
+    }
+  }
+  .print-btn{
+    margin: auto;
+    button{
+      padding: 8px 27px;
+      border-radius: 5px;
+      border: 0;
+      background: #09cacd;
+      color: #fff;
+    }
+}
