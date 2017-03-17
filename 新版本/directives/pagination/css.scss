@@ -1,0 +1,78 @@
+.pageConf , .pageConf *{
+  display : inline;
+}
+  .ui-page{
+    display:inline-block;
+  	text-align: center;
+    // padding: 40px 24px;
+  }
+  .pagination{
+    margin : 0;
+  }
+  .pagination-page,.name{
+    line-height: 24px;
+    display: inline-block;
+  }
+  .ui-page > * {
+    margin-right : 10px;
+  }
+  .ui-page input[type="text"] , .ui-page select{
+    width : 24px;
+    height : 24px;
+    line-height : 24px;
+    text-align : center;
+    border : 1px solid #eee;
+    margin : 0 4px;
+    background-color : #fff;
+    border-radius : 3px;
+  }
+  .ui-page select{
+    width : auto ;
+  }
+  .go{
+    background: #09cacd;
+    width: 67px;
+    height: 24px;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    line-height: 24px;
+    border: 0;
+  }
+
+  .pagination{
+  	display: inline-block;
+	  	.active{
+	  		background: #09cacd;
+	  		border: 0;
+	  		padding: 4px 9px;
+	  		a{
+	  			color:#fff;
+	  		}
+	  	}
+  	li{
+  		display: inline-block;
+  		padding: 3px 8px;
+  		border: 1px solid #d1d1d1;
+  		border-radius: 5px; 
+  		margin: 0 4px;
+  	}
+  	a{
+  		color:#666;
+  	}
+  }
+  .pageConf{
+  	color: #666;
+  	.name{
+  		input{
+  			border-radius: 5px;
+  		}
+  	}
+  }
+
+  .pagination-page{
+  	color: #666;
+  	span{
+  		color:#09cacd;
+  	}
+  }

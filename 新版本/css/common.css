@@ -1,0 +1,39 @@
+*{margin: 0; padding: 0;font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑",SimHei,SimSun,sans-serif;}
+a, img {
+    -webkit-touch-callout: none; /*禁止长按链接与图片弹出菜单*/
+    text-decoration:none;
+}
+
+button,input,optgroup,select,textarea {
+    /*-webkit-appearance:none; !*去掉webkit默认的表单样式*!*/
+}
+
+a,button,input,optgroup,select,textarea {
+    -webkit-tap-highlight-color:rgba(0,0,0,0); /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+}
+
+input::-webkit-input-placeholder {
+    /*修改webkit中input的planceholder样式*/
+}
+
+input:focus::-webkit-input-placeholder {
+     /*修改webkit中focus状态下input的planceholder样式*/
+}
+
+body {
+    -webkit-text-size-adjust: 100%!important; /*禁止IOS调整字体大小*/
+}
+
+input::-webkit-input-speech-button {
+    display: none; /*隐藏Android的语音输入按钮*/
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, button{padding:0;margin:0;}
+fieldset, img{border:0;}
+input, label, select, option, textarea, button, fieldset, legend{font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑",SimHei,SimSun,sans-serif;resize: none;outline:none;}
+ul{list-style:none;}
+body{font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑",SimHei,SimSun,sans-serif;width:100%; min-height:100%;font-size:14px;background: #eee; }
+h1,h2,h3,h4,h5,h6{font-size:100%;font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑",SimHei,SimSun,sans-serif;}
+ul,li{list-style:none;}
+i{font-style: inherit;}
+h1,h2{ font-weight:normal;}
+img{vertical-align:top;border:0;-webkit-touch-callout: none;max-width: 100%;}

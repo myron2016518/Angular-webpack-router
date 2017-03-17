@@ -1,0 +1,201 @@
+<div class="prescriptionaudit"  ng-init="getPDetail()" >
+	
+	<script type="text/ng-template" id="inputPWDDialogId">
+		<div ng-if="PWDandPro">
+	        <div class="ngdialog-message">
+	            <p >输入签名密码</p>
+	
+	        </div>
+	        <div class="ngdialog-buttons">
+	            <input type="password" maxlength="6" class="form-control password" ng-change="inputChange()" ng-model="form.inputpassword" name="inputpassword" placeholder="输入密码" >
+	            <p ng-if="inputPwdShow">签名密码错误，请重新输入。</p> 
+	        </div>
+        </div>
+        <div ng-if="!PWDandPro">
+	        <div class="ngdialog-message">
+	            <p >{{submitProText}}</p>
+	
+	        </div>
+	        <div class="ngdialog-buttons">
+	            <a class="login-submit close-this-dialog" href="javascript:;"  ng-click="closeThisDialog()" ng-if="isSubmit">确认</a>
+	        </div>
+        </div>
+    </script>
+    
+    <script type="text/ng-template" id="timeoutPrompt">
+        <div class="ngdialog-message">
+            <p >审单时间已超时，即将返回接单页面。</p>
+        </div>
+    </script>
+    
+	<div class="screen-list">
+		
+		<ul class="details-1">
+			<li>
+				<p>
+					<span>审方处理中</span>
+					<a class="login-submit" href="javascript:;" ng-click="stopTrial()">停止审方</a>
+				</p>
+			</li>
+		</ul>
+		<div class="left">
+			<div class="title">
+	  			<div>
+	  				
+	  			</div>
+	  			<h3>
+	  			新疆互联网医院	
+	  			<br/>处方笺
+		  		</h3>
+		  		<div class="type">
+		  			<p>
+		  				普通<br/>
+		  				处方
+		  			</p>
+		  		</div>
+	  		</div>
+	  		<div class="text">
+		  		<ul class="user-text">
+		  			<li>
+		  				<p>
+		  					<span>
+		  						No.
+		  					</span>
+		  					{{orderNo}}
+		  				</p>
+		  				<p>
+		  					<span>
+		  					开方日期:
+		  					</span>
+		  					{{prescriptionDetail.createDate | date:'yyyy.MM.dd'}}
+		  				</p>
+		  			</li>
+		  			<li>
+		  				<p>
+		  					<span>
+		  						姓名:
+		  					</span>
+		  					<u>{{prescriptionDetail.patientName}}</u>
+		  				</p>
+		  				<p style="text-indent: 0;">
+		  					<span>
+		  						性别:
+		  					</span>
+		  					<u>{{prescriptionDetail.sex}}</u>
+		  				</p>
+		  				<p>
+		  					<span>
+		  						年龄:
+		  					</span>
+		  					<u>{{prescriptionDetail.age}}</u>
+		  				</p>
+		  			</li>
+		  			<li>
+		  				<p>
+		  					<span>
+		  						门诊病历号:
+		  					</span>
+		  					<!--2132132123312-->
+		  				</p>
+		  				<p>
+		  					<span>
+		  						科室:
+		  					</span>
+		  					<u>
+		  						{{prescriptionDetail.deptName}}
+		  					</u>
+		  				</p>
+		  			</li>
+		  			<li>
+		  				<p>
+		  					<span>
+		  						初步诊断:
+		  					</span>
+		  					<u>
+		  					{{prescriptionDetail.preliminaryDiagnosis}}
+		  					</u>
+		  				</p>
+		  			</li>
+		  		</ul>
+		  		<h4>
+		  			Rp
+		  		</h4>
+		  		<ul class="rp">
+		  			<li ng-repeat="drugList in prescriptionDetail.drugList">
+		  				<p>{{drugList.id}}.{{drugList.drugName}}</p>
+		  				<span>{{drugList.specifications}} x{{drugList.number}}</span>
+		  				<u>用法用量: {{drugList.usage  + '  '+drugList.frequency + '  一次'+drugList.unitDose}}</u>
+		  			</li>
+		  			<li>
+		  				<p>注意事项</p>
+		  				<u>{{prescriptionDetail.doctorAdvice}}</u>
+		  			</li>
+		  		</ul>
+		  		<ul class="autograph">
+		  			<li>
+			  			<span>诊断医生:</span>
+			  			<i><img src="./images/img-1.png"></i>
+		  			</li>
+		  			<li>
+			  			<span>审核药师:</span>
+			  			<i><img src="./images/img-1.png"></i>
+		  			</li>
+		  			<li>
+			  			<span>处方医生:</span>
+			  			<i><img src="./images/img-1.png"></i>
+		  			</li>
+		  			<li>
+			  			<span>处方药师:</span>
+			  			<i><img src="./images/img-1.png"></i>
+		  			</li>
+		  		</ul>
+		  		<p class="zhu">
+		  			注:此方仅当天生效
+		  		</p>
+	  		</div>
+  		</div>
+		<ul class="details-3">
+			<li>
+				<p>
+					<span>为了避免患者在药店长时间等待，</span>
+				</p>
+			</li>
+			<li>
+				<p>
+					<span>请在<span style="font-size: 20px;">{{dateTime}}</span>秒内完成处方审核</span>
+				</p>
+			</li>
+			<li>
+				<a class="login-submit clnotpass" ng-class="{true:'passliselect',false:''}[isnotpass]" href="javascript:;" ng-click="noPassAction()">不通过</a>
+				<a class="login-submit clpass" href="javascript:;" ng-click="passAction()">通过</a>
+			</li>
+			<li class="liclearfloat proli">
+				<p>
+					<span>温馨提示：处方审核会用到您的电子证书进行签名</span>
+				</p>
+			</li>
+			<li class="notpassAction" ng-if="isnotpass">
+				<textarea ng-model="notpass.Describe"></textarea>
+				<a class="login-submit" href="javascript:;" ng-class="{true:'passliselect',false:''}[isnotpass]" ng-click="notpassSubmit()">提交</a>
+			</li>
+			<li class="recordli">
+				<p>
+					<span>审核记录</span>
+				</p>
+			</li>
+			<li ng-repeat="AHList in prescriptionDetail.auditHistoryList">
+				<p>
+					<span>{{AHList.updateDate | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+				</p>
+				<p >
+					<span>审核{{AHList.aduitStatus==0 ? '不通过' : '通过'}}，by药师{{AHList.doctorName}}</span>
+				</p>
+				<p ng-if="AHList.aduitStatus==0">
+					<span>理由：{{AHList.reason}}</span>
+				</p>
+			</li>
+			
+		</ul>
+	</div>
+
+</div>

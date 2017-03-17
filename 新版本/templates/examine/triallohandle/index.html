@@ -1,0 +1,56 @@
+<div class="triallohandle"  ng-init="getTrial()" >
+	
+	
+    <!--
+     <script type="text/ng-template" id="modalDialogId">
+        <div class="ngdialog-message">
+            <h3>ngDialog modal example</h3>
+            <p>您有新的待审核处方，请点击下方按钮开始审核。</p>
+        </div>
+        <div class="ngdialog-buttons">
+            <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm(confirmValue)">Confirm</button>
+        </div>
+    </script>-->
+    
+    <script type="text/ng-template" id="firstDialogId">
+        <div class="ngdialog-message">
+            <p >您有新的待审核处方，请点击下方按钮开始审核。</p>
+
+        </div>
+        <div class="ngdialog-buttons">
+            <button type="button" class="ngdialog-button " ng-click="confirm()">开始审核</button>
+        </div>
+    </script>
+    
+	<div class="screen-list">
+		
+		<ul class="details-1">
+			<li>
+				<p>
+					<span>审方处理中</span>
+					<a class="login-submit" href="javascript:;" ng-click="stopTrial()">停止审方</a>
+				</p>
+			</li>
+			
+			
+		</ul>
+		
+		<ul class="details-2">
+			<li>
+				<p>
+					<span>暂无处方需审核，请勿退出如有需审核的处方，我们会第一时间推送给您。</span>
+				</p>
+			</li>
+			<li>
+				<p>
+					<span>您也可以点击下面按钮手动刷新。</span>
+				</p>
+			</li>
+			<li>
+				<a class="login-submit" href="javascript:;" ng-click="refreshTrial()">刷新</a>
+				<!--<a class="login-submit" href="javascript:;" ng-click="goprescriptionaudit()">进入审方</a>-->
+			</li>
+		</ul>
+	</div>
+
+</div>

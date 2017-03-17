@@ -1,0 +1,135 @@
+<div class="hisory-details">
+	<div class="left">
+	<iframe src={{url+data.PDFUrl}} style="width: 497px;height:777px;" frameborder="0"></iframe>  
+			<!-- <div class="title">
+	  			<div>
+	  				
+	  			</div>
+	  			<h3>
+	  			新疆互联网医院	
+	  			<br/>处方笺
+		  		</h3>
+		  		<div class="type">
+		  			<p>
+		  				普通<br/>
+		  				处方
+		  			</p>
+		  		</div>
+	  		</div> -->
+	  		<!-- <div class="text">
+		  		<ul class="user-text">
+		  			<li>
+		  				<p>
+		  					<span>
+		  						No.
+		  					</span>
+		  					20170112312*****
+		  				</p>
+		  				<p>
+		  					<span>
+		  					开方日期:
+		  					</span>
+		  					2017.02.07
+		  				</p>
+		  			</li>
+		  			<li>
+		  				<p>
+		  					<span>
+		  						姓名:
+		  					</span>
+		  					<u>陆先生</u>
+		  				</p>
+		  				<p style="text-indent: 0;">
+		  					<span>
+		  						性别:
+		  					</span>
+		  					<u>男</u>
+		  				</p>
+		  				<p>
+		  					<span>
+		  						年龄:
+		  					</span>
+		  					<u>38</u>
+		  				</p>
+		  			</li>
+		  			<li>
+		  				<p>
+		  					<span>
+		  						门诊病历号:
+		  					</span>
+		  					2132132123312
+		  				</p>
+		  				<p>
+		  					<span>
+		  						科室:
+		  					</span>
+		  					<u>
+		  						内科
+		  					</u>
+		  				</p>
+		  			</li>
+		  			<li>
+		  				<p>
+		  					<span>
+		  						初步诊断:
+		  					</span>
+		  					<u>
+		  					上呼吸道感染
+		  					</u>
+		  				</p>
+		  			</li>
+		  		</ul>
+		  		<h4>
+		  			Rp
+		  		</h4>
+		  		<ul class="rp">
+		  			<li>
+		  				<p>1.感冒灵胶囊</p>
+		  				<span>0.25g10粒 x2板  x2盒</span>
+		  				<u>用法用量:口服 一日两次 一次2粒</u>
+		  			</li>
+		  			<li>
+		  				<p>2.感冒灵胶囊</p>
+		  				<span>0.25g10粒 x2板  x2盒</span>
+		  				<u>用法用量:口服 一日两次 一次2粒</u>
+		  			</li>
+		  			<li>
+		  				<p>注意事项</p>
+		  				<u>尽量待在空气流通的地方，有利于病情康复</u>
+		  			</li>
+		  		</ul>
+		  		<ul class="autograph">
+		  			<li>
+			  			<span>诊断医生:</span>
+			  			<i><img src="./images/img-1.png"></i>
+		  			</li>
+		  			<li>
+			  			<span>审核药师:</span>
+			  			<i><img src="./images/img-1.png"></i>
+		  			</li>
+		  			<li>
+			  			<span>处方医生:</span>
+			  			<i><img src="./images/img-1.png"></i>
+		  			</li>
+		  			<li>
+			  			<span>处方医生:</span>
+			  			<i><img src="./images/img-1.png"></i>
+		  			</li>
+		  		</ul>
+		  		<p class="zhu">
+		  			注:此方仅当天生效
+		  		</p>
+	  		</div> -->
+  		</div>
+  		<div class="right">
+  			<div class="jg">审核结果:<span ng-if='is == "1"'>审核通过</span><span ng-if='is == "0"'>审核不通过</span></div>
+  			<h3>
+  				审核记录
+  			</h3>
+  			<p ng-repeat="x in data.auditHistoryList">
+  				{{ x.updateDate | date:'yyyy-MM-dd HH:mm'}}<br/>
+  				<span ng-if='x.aduitStatus == 0'>审核不通过</span><span ng-if='x.aduitStatus == 1'>审核通过</span>。by药师{{x.doctorName}}<br/>
+  				理由:{{x.reason}}<br/>
+  			</p>
+  		</div>
+</div>

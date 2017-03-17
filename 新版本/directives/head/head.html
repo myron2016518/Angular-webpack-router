@@ -1,0 +1,18 @@
+<div class="head">
+	<div class="content">
+		<div class="logo"><img src="../../images/icon_logo.png" /></div>
+	    <ul>
+	        <li ui-sref="examine" ui-sref-active="nav-active"><i><img src="../../images/icon_review-.png"></i><p>处方审核</p></li>
+	        <li ui-sref="history"  ui-sref-active="nav-active"><i><img src="../../images/icon_history.png"></i><p>审核历史</p></li>
+	        <li ui-sref="user"  ui-sref-active="nav-active"><i><img src="../../images/icon_user.png"></i><p>账号管理</p></li>
+	    </ul>
+	    <div class="btn"><i><img src="../../images/icon_quit.png"></i><p>退出</p></div>
+	    <div class="kefu" ng-click="kefuClick()"><i><img src="../../images/icon_service.png"></i><p>客服</p></div>
+	    <div class="pop" ng-if="kefuIs">
+	    	<p>
+	    		客服电话:<br/>
+				0755-26656589
+	    	</p>
+	    </div>
+	</div>
+</div>

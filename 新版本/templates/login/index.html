@@ -1,0 +1,46 @@
+<style>
+	.main{
+    	margin: 0 !important;
+	}
+</style>
+<div class="login">
+<div class="login-bg" >
+	<div class="login-main">
+		<!--<div class="login-logo clearfix">
+			<img src="./images/bg.png">
+		</div>-->
+			<div class="login-form">
+				<div class="login-input">
+					<input type="text" class="form-control username" ng-model="form.mobile" name="mobile" placeholder="输入手机号" autocomplete="off">
+				</div>
+				<div class="login-input">
+					<!-- <input type="password" class="form-control password" style="position:absolute;z-index:-999"> -->
+					<input type="password" class="form-control password" ng-model="form.password" ng-keyup="myKeyup($event)" name="password" placeholder="输入密码" autocomplete="off">
+				</div>
+				<div class="prompt">
+					<ul>
+						<li ng-show="userPro">账户用户名错误</li>
+						<li ng-show="pwdPro" >密码出错</li>
+					</ul>
+				</div>
+				
+				<div class="login-handle clearfix">
+					<a href="javascript:;"  ng-class="{true:'remember on',false:'remember'}[isRemember]" ng-click="toggleRemember()">记住密码</a>
+					<a href="javascript:;" class="forgot" ng-click="kefuClick()" title="客服电话:0755-26656589">忘记密码？</span>
+					<!--<div class="pop" ng-if="kefuIs">
+				    	<p>
+				    		客服电话:<br/>
+							0755-26656589
+				    	</p>
+				    </div>-->
+				</div>
+				<a class="login-submit" href="javascript:;" ng-click="login()">登录</a>
+				
+				<a href="javascript:;" class="yyyhttplink"  ng-class="{true:'rememberXY on',false:'rememberXY'}[isRememberXY]" ng-click="toggleRememberXY()"></a>
+				<a href="javascript:;" class="yyyhttplinkAc" ng-href="#" target="_blank">勾选按钮代表您同意《药云医互联网医院服务协议》</a>
+				
+			</div>
+	</div>
+	
+</div>
+</div>
