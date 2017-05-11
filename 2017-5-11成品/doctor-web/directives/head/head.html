@@ -1,0 +1,39 @@
+<div class="head hide" ng-class="{'show':ishead}">
+	<div class="content hide" ng-class="{'show':headClick}">
+		<div class="logo icon-logo">			
+		</div>
+	    <ul>
+	        <li ui-sref="examine.starttrial" ui-sref-active="nav-active"><i class="icon-icon_index"></i><p>首页</p></li>
+	        <li ui-sref="history"  ui-sref-active="nav-active"><i class="icon-icon_admissions-history"></i><p>接诊历史</p></li>
+	        <li ui-sref="user"  ui-sref-active="nav-active"><i class="icon-icon_user"></i><p>账号管理</p></li>
+	    </ul>
+	    <div class="kefu" ng-click="quitClick()"><i class="icon-icon_doctor"></i><p>{{userData.data.doctorName}}</p></div>
+	    <div class="kefu" ng-click="kefuClick()"><i class="icon-icon_service"></i><p>客服</p></div>
+	    <div class="pop hide" ng-class="{'show':kefuIs}">
+	    	<p>
+	    		客服电话:<br/>
+				0755-26656589
+	    	</p>
+	    </div>
+	    <div class="pop1 hide" ng-class="{'show':quitIs}">
+	    	<a ng-click="loginOut()"><i class="icon-icon_quit"></i><span>退出</span>	</a>
+	    </div>
+	</div>
+	<div class="content hide" ng-class="{'show':!headClick}">
+		<!--<div class="logo"><img src="../../images/icon_logo.png" /></div>-->
+	    <ul>
+	    	<!-- <li ng-click="stopTrial()" ><i><embed src="../swiPharmacistWeb/img/icon_leave.svg"></i><p>离开候诊室</p></li>-->
+	        <li ng-click="stopTrial()" ><i class="icon-icon_leave"></i><p>离开候诊室</p></li>
+	       <!--  <li><i><img src="../../images/icon_history.png"></i><p>审核历史</p></li>
+	       <li><i><img src="../../images/icon_user.png"></i><p>账号管理</p></li>-->
+	    </ul>
+	   <!-- <div class="btn"  ng-click="clickAlert()" ><i><img src="../../images/icon_quit.png"></i><p>退出</p></div>-->
+	    <!--<div class="kefu" ng-click="kefuClick()"><i><img src="../../images/icon_service.png"></i><p>客服</p></div>-->
+	    <div class="pop hide" ng-class="{'show':kefuIs}">
+	    	<p>
+	    		客服电话:<br/>
+				0755-26656589
+	    	</p>
+	    </div>
+	</div>
+</div>

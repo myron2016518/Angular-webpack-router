@@ -1,0 +1,115 @@
+<div class="triallohandle"  ng-init="initTriall()" >
+	
+	
+    <!--
+     <script type="text/ng-template" id="modalDialogId">
+        <div class="ngdialog-message">
+            <h3>ngDialog modal example</h3>
+            <p>您有新的待审核处方，请点击下方按钮开始审核。</p>
+        </div>
+        <div class="ngdialog-buttons">
+            <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm(confirmValue)">Confirm</button>
+        </div>
+    </script>-->
+    
+    <script type="text/ng-template" id="firstDialogId">
+        <div class="ngdialog-message">
+            <div class="titleNgM">您有新的视频/图文问诊咨询</div>
+            <p class="del1">患者：{{patientInfo.patientName}}，{{patientInfo.sexTxt}}，{{patientInfo.age}}岁。</p>
+            <p class="del1">{{patientInfo.chiefComplaint}}</p>
+        </div>
+        <div class="ngdialog-buttons">
+            <button type="button" class="ngdialog-button" style="display: inline;" ng-click="confirm()">接诊</button>
+            <p class="tishi2">请尽快接诊，以免患者在药店长时间等待。</p>
+        </div>
+    </script>
+    
+    <script type="text/ng-template" id="updatePrescribe">
+        <div class="ngdialog-message">
+            <div class="titleNgM">您有一个审核未通过的处方，请修改处方后再接诊。</div>
+            <p class="del1" style="text-align: center;text-align: -webkit-center;">您于{{patientInfo.submitDate | date:'yyyy年MM月dd日 hh:mm'}} 给患者{{patientInfo.patientName}}开的处方审核未通过。</p>
+            <p class="del1" style="text-align: center;text-align: -webkit-center;">未通过说明：{{patientInfo.reason}}</p>
+        </div>
+        <div class="ngdialog-buttons">
+            <button type="button" class="ngdialog-button" style="display: inline;" ng-click="confirm()">修改处方</button>
+            <p class="tishi2">请尽快修改处方并提交审核，以免患者在药店等待取药时间过长。</p>
+        </div>
+    </script>
+    
+	<div class="screen-list">
+		<ul class="details-2">
+			<li>
+				<p>
+					<span>一旦有患者向您咨询，我们会第一时间通知您，请勿切换页面。</span>
+				</p>
+			</li>
+			<li>
+				<p>
+					<span>您也可以点击下方按钮主动刷新，查看是否有新的咨询。</span>
+				</p>
+			</li>
+			<li>
+				<p>
+					<span>若想停止接诊，可以点击左上角按钮“离开候诊室”。</span>
+				</p>
+			</li>
+			<li>
+				<a class="login-submit" href="javascript:;" ng-click="refreshTrial()">刷新</a>
+				<!--<a class="login-submit" href="javascript:;" ng-click="goprescriptionaudit()">进入审方</a>-->
+			</li>
+		</ul>
+	</div>
+
+	<div class="details-1">
+		<ul class="inWaiting">
+			<li>
+				<p>
+					<span class="inWaitingTitle">候诊中({{houzhen.total}})人</span>
+				</p>
+			</li>
+			<li>
+				<p>
+					<i class="icon-icon_video"></i>
+					<span>视频问诊</span>
+					<span class="lispan1"><span class="numberC">{{houzhen.videoSum}}</span>人</span>
+				</p>
+			</li>
+			<li>
+				<p>
+					<i class="icon-icon_graphic"></i>
+					<span>图文问诊</span>
+					<span class="lispan1"><span class="numberC">{{houzhen.imageSum}}</span>人</span>
+				</p>
+			</li>
+			<li class="act" >
+				<p class="buttonOr">
+					<a class="login-submit" href="javascript:;" ng-click="pauseInquiry()">暂停接单</a>
+				</p>
+				<p>
+					<span class="tishi">暂停接单后，将不有新的患者向您咨询。</span>
+				</p>
+			</li>
+		</ul>
+		<ul class="alreadyAccepted">
+			<li>
+				<p>
+					<span class="alreadyAcceptedTitle">今日已接诊({{yijiezhen.total}})人</span>
+				</p>
+			</li>
+			<li>
+				<p>
+					<i class="icon-icon_video"></i>
+					<span>视频问诊</span>
+					<span class="lispan1"><span class="numberC">{{yijiezhen.videoSum}}</span>人</span>
+				</p>
+			</li>
+			<li>
+				<p>
+					<i class="icon-icon_graphic"></i>
+					<span>图文问诊</span>
+					<span class="lispan1"><span class="numberC">{{yijiezhen.imageTextSum}}</span>人</span>
+				</p>
+			</li>
+		</ul>
+	</div>
+</div>

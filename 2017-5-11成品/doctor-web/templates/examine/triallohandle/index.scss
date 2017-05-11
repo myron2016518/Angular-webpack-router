@@ -1,0 +1,182 @@
+.triallohandle{
+    width: 100%;
+    background-color: #eee;
+    min-height: 800px;
+  .details-1{
+    float: right;
+    overflow: hidden;
+    width: 38%;
+    background-color: #fff;
+    min-height: 800px;
+    .inWaiting{
+        padding-top: 50px;
+        padding-left: 24px;
+        border-bottom: 1px solid #EEEEEE;
+        .inWaitingTitle{
+            font-weight: bold;
+        }
+        .tishi{
+            font-size: 14px;
+            color: #999;
+        }
+        .act{
+            text-align: -webkit-center;
+            text-align: center;
+            padding-top: 14px;
+            .buttonOr{
+                height: 34px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .alreadyAccepted{
+        padding-top: 50px;
+        padding-left: 24px;
+        .alreadyAcceptedTitle{
+            font-weight: bold;
+        }
+    }
+    li{
+        padding-bottom: 30px;
+        span{
+          font-size: 16px;
+          color: #666;
+        }
+        i{
+            padding-right: 10px;
+            font-size: 22px;
+            color: #999;
+            vertical-align: middle;
+        }
+        .lispan1{
+            float: right;
+            padding-right: 34px;
+        }
+        .numberC{
+            font-size: 24px;
+        }
+        .login-submit{
+            height: 40px;
+            line-height: 40px;
+            background: #7eb2b3;
+            text-decoration: none;
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            display: inline-block;
+            width: 200px;
+            border-radius: 4px;
+            letter-spacing: 2px;
+        }
+        .login-submit:active{
+            color: #fff;
+            background: #07bob2;
+            outline: 0;
+            -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+        }
+    }
+    
+  }
+  .screen-list{
+    float: left;
+    text-align: center;
+    overflow: hidden;
+    width: 60%;
+    background-color: #fff;
+    min-height: 800px;
+    .details-2{
+        display: block;
+        width: 100%;
+        margin-top: 220px;
+        overflow: hidden;
+        li{
+          display: block;
+          color: #666;
+          line-height: 36px;
+          font-size: 16px;
+          span{
+            padding-right: 8px;
+          }
+          .login-submit{
+            height: 40px;
+            line-height: 40px;
+            background: #09CACD;
+            text-decoration: none;
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            display: block;
+            width: 200px;
+            border-radius: 4px;
+            letter-spacing: 2px;
+            margin-top: 30px !important;
+            margin:auto;
+          }
+          .login-submit:active{
+            color: #fff;
+            background: #07bob2;
+            outline: 0;
+            -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          }
+        }
+      }
+  }
+  
+}
+
+.ngdialog-Triallohandle{
+    .ngdialog-content{
+        .ngdialog-buttons{
+            text-align: center;
+            text-align: -webkit-center;
+            .ngdialog-button {
+                float: none;
+                height: 40px;
+                background: #09CACD;
+                text-decoration: none;
+                font-size: 16px;
+                color: #fff;
+                text-align: center;
+                display: block;
+                width: 200px;
+                border-radius: 4px;
+                letter-spacing: 2px;
+                margin-top: 30px;
+            }
+            .ngdialog-button:active{
+                color: #fff;
+                background: #07bob2;
+                outline: 0;
+                -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+                box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+              }
+            .tishi2{
+                margin-top: 20px;
+                font-size: 14px;
+                color: #999999;
+            }
+        }
+        .ngdialog-message{
+            .titleNgM{
+                margin-top: 21px;
+                margin-bottom: 20px;
+                font-size: 16px;
+                color: #666666;
+                font-weight: bold;
+                text-align: -webkit-center;
+                text-align: center;
+            }
+            .del1{
+                margin-left: 14px;
+                text-align: left;
+                text-align: -webkit-left;
+                font-size: 14px;
+                color: #666666;
+                line-height: 30px;
+            }
+        }
+    }
+    
+}

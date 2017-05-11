@@ -1,0 +1,47 @@
+<div class="examine"   ng-init="getDoctorInfo()" >
+    <!-- <bubble conf="conf"></bubble> -->
+	<div class="screen-list">
+		<span class="slTitle">成为在线执业医生的第一步</span>
+		<p class="sl1">申请执业医生电子证书，并设置处方签名密码，对处方进行签名。</p>
+		<ul class="details-1">
+			<li class="slfirstli">
+				<p>
+					<span >个人资料</span>
+				</p>
+			</li>
+			
+			<li><p><span class="sllileft">姓名：</span><span>{{userdata.name}}</span> </p></li>
+			<li><p><span class="sllileft">性别：</span><span>{{userdata.sex}}</span> </p></li>
+			<li><p><span class="sllileft">出生日期：</span><span>{{userdata.birthDate | date:'yyyy年MM月dd日'}}</span> </p></li>
+			<li><p><span class="sllileft">身份证号：</span><span>{{userdata.idNo}}</span> </p></li>
+			<li><p><span class="sllileft">资格证书号：</span><span>{{userdata.qualificationNo | cut:true:30:' ...' }}</span> </p></li>
+			<li><p><span class="sllileft">注册证编号：</span><span>{{userdata.registrationNo |  cut:true:30:' ...' }}</span> </p></li>
+			<!--<li><p><span class="sllileft">注册证有效期至：</span><span>{{userdata.validDate | date:'yyyy年MM月dd日'}}</span> </p></li>-->
+		</ul>
+		<ul class="details-2">
+			<li class="slfirstli">
+				<p>
+					<span>处方加签密码(6位数字)</span>
+				</p>
+			</li>
+			<li>
+				<p>
+					<span>输入密码：</span> <input style="display:none" autocomplete="off" name="name"><input type="password" maxlength="6"  onkeyup="this.value=this.value.replace(/[^\d]/ig,'')" class="form-control password" ng-change="inputPWD()" ng-model="form.password"  placeholder="输入密码" >
+				</p>
+			</li>
+			<li>
+				<p>
+					<span>确认密码：</span> <input type="password" maxlength="6" class="form-control password" ng-change="inputPWDCF()" onkeyup="this.value=this.value.replace(/[^\d]/ig,'')"  ng-model="form.passwordConfirm"  placeholder="确认密码" >
+				</p>
+			</li>
+			<li style="height: 20px;">
+				<p style="font-size: 14px;color: #ff3c00;" ng-if="ispwdcfPro">请确认两次密码都准确无误。</p>
+			</li>
+		</ul>
+		<div class="dowmXY">
+			<a class="login-submit" href="javascript:;" ng-click="dowzhengshu()" ng-class="{true:'isokPWD',false:''}[PWDisOK]" >申请电子证书</a>
+		</div>
+		
+	</div>
+
+</div>

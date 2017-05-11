@@ -1,0 +1,82 @@
+<style>
+	.main{
+    	margin-top: 0 !important;
+	}
+</style>
+
+<div class="prescriptionaudit"  ng-init="getPDetail()"  >
+	
+	
+    
+    <script type="text/ng-template" id="timeoutPrompt">
+        <div class="ngdialog-message">
+            <p >审单时间已超时，即将返回接单页面。</p>
+        </div>
+    </script>
+    <script type="text/ng-template" id="chiefComplaintText">
+        <div class="ngdialog-message">
+            <p >请填写主诉/现病史与初步诊断理由。</p>
+        </div>
+    </script>
+
+	
+	<!--<div class="screen-list"  >
+		视频
+	</div>-->
+	<div class="head">
+		<div class="content" >
+			<!--<div class="logo"><img src="../../images/icon_logo.png" /></div>-->
+			<div class="suspensionOrder"><a href="javascript:;" class="login-submit" ng-click="pauseInquiry()" >暂停接单</a>12人候诊中</div> 
+		  	<div  class="cdt">
+				接诊时长 {{countDownTime | date:'mm:ss'}}
+			</div>
+			<div class="stopOrder"><a href="javascript:;" class="login-submit" ng-click="pauseOver()" >结束问诊</a></div> 
+		</div>
+		
+	</div>
+	<div class="screen-list"  >
+		 <iframe id="pdf" style=" height:100%;width:100%;    border: none;"  scrolling="no" frameborder="0"></iframe> 
+	</div>
+	<div class="screen-list patientInformation"  >
+		 
+		 <div class="patientRecord">
+			<div class="patientInfo">
+				<span>姓名：<input type="text" maxlength="6" class="form-control username" ng-model="form.username" ng-class="{'userInfoShow':!isSaveUserInfo}" ng-readonly="!isSaveUserInfo" placeholder="姓名" ></span>
+				<span>性别：<input type="text" maxlength="1" class="form-control sex" ng-model="form.sex" ng-class="{'userInfoShow':!isSaveUserInfo}" ng-readonly="!isSaveUserInfo" placeholder="" ></span>
+				<span>年龄：<input type="text" maxlength="3" class="form-control age" ng-model="form.age" ng-class="{'userInfoShow':!isSaveUserInfo}" ng-readonly="!isSaveUserInfo" placeholder="" ></span> 
+				<a href="javascript:;" class="login-submit userInfoSave" ng-if="isSaveUserInfo" ng-click="saveUserInfo()" >保存</a>
+				<a href="javascript:;" class="login-submit userInfoSave" ng-if="!isSaveUserInfo" ng-click="updataUserInfo()" >修改</a>
+			</div>
+			<ul>
+				<li>
+					<p class="description">科室：内科</p>
+				</li>
+				<li>
+					<p class="description">*主诉/现病史：</p>
+					<p><textarea placeholder="需要带入患者提交的病情描述" ng-model="form.chiefComplaint" ></textarea></p>
+				</li>
+				<li>
+					<p class="description">既往病史：</p>
+					<p><textarea placeholder="请填写患者的既往史..." ng-model="form.pastHistory" ></textarea></p>
+				</li>
+				<li>
+					<p class="description">初步诊断：</p>
+					<p><textarea placeholder="请填写初步诊断..." ng-model="form.preliminaryDiagnosis" ></textarea></p>
+				</li>
+				<li>
+					<p class="description">治疗意见：</p>
+					<p><textarea placeholder="请填写治疗意见…" ng-model="form.doctorAdvice" ></textarea></p>
+				</li>
+				<li>
+					<span>手机： <input type="text" maxlength="11" class="form-control phone" ng-class="{'userInfoShow':!isSaveUserPhone}" ng-readonly="!isSaveUserPhone" onkeyup="this.value=this.value.replace(/[^\d]/ig,'')"  ng-model="form.phone"  placeholder="手机号码11位" ></span> 
+					<a href="javascript:;" class="login-submit userPhoneSave" ng-if="isSaveUserPhone" ng-click="saveUserPhone()" >保存</a>
+					<a href="javascript:;" class="login-submit userPhoneSave" ng-if="!isSaveUserPhone" ng-click="updataUserPhone()" >修改</a>
+					<p>请与患者确认接收治疗意见的手机号码是否正确</p>
+				</li>
+			</ul>
+		</div>
+		 <a href="javascript:;" class="login-submit saveCase" ng-click="saveMedicalRecord(0)" >保存病历</a>
+		 <a href="javascript:;" class="login-submit saveandprescribe" ng-click="saveMedicalRecord(1)" >完成诊断并开处方</a>
+	</div>
+	
+</div>

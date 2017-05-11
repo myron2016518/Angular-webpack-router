@@ -1,0 +1,61 @@
+<style type="text/css">
+	.main {
+		background: #eee;
+	}
+</style>
+<div class="user">
+	<div class="page">
+		<ul>
+			<li ng-click="isPage('number')" ng-class="{'active':isHide == 'number'}">账号管理</li>
+			<li ng-click="isPage('autograph')" ng-class="{'active':isHide == 'autograph'}">证书管理</li>
+			<li ng-click="isPage('user')" ng-class="{'active':isHide == 'user'}">个人资料</li>
+		</ul>
+	</div>
+	<div class="modify-number" ng-show='isHide == "number"'>
+		<div class="content">
+			<h3>修改账号密码</h3>
+			<ul ng-show="!modify">
+				<!-- <li><span>原密码:</span><input style="display:none" autocomplete="off" name="name"><input ng-model='number.oldPassword' ng-change='numberOldChange()' type="Password" maxlength="16"></li> -->
+				<li><span>手机号:</span><input style="font-size: 14px;color:#666;" type="text" ng-model="mobileNo" maxlength="11"></li>
+				<li ng-class="{'tishi':numberWarn != ''}"><span>验证码:</span><div class="timer"><input  placeholder="请输入验证码" ng-model="send" type="text"  maxlength="8"><a ng-click='change()' ng-bind="timer.data"></a></div></li>
+				<p style="text-indent: 25px;" ng-if="numberWarn != ''" class="autographWarn" ng-bind="numberWarn"></p>
+			</ul>
+			<ul ng-show="modify"> 
+				<!-- <li><span>原密码:</span><input style="display:none" autocomplete="off" name="name"><input ng-model='number.oldPassword' ng-change='numberOldChange()' type="Password" maxlength="16"></li> -->
+				<li class="tishi"><span>新密码:</span><input ng-model='number.newPassword'  ng-change='numberNewChange()' type="Password"  maxlength="16"></li>
+				<p>6-16位数字、字母或英文字符、字母区分大小写</p>
+				<li ng-class="{'tishi':numberWarn != ''}"><span>密码确认:</span><input ng-model='number.cmNewPassword'  ng-change='numberCmNewChange()' type="Password"  maxlength="16"></li>
+				<p style="text-indent: 25px;" ng-if="numberWarn != ''" class="autographWarn" ng-bind="numberWarn"></p>
+			</ul>
+			<button ng-if="!modify" ng-click="nextClick()">下一步</button>
+			<button ng-if="modify">确定</button>
+		</div>
+	</div>
+	<div class="modify-autograph" ng-if='isHide == "autograph"'>
+		<div class="content">
+			<h3>修改签名密码(6位数字)</h3>
+			<ul>
+				<li><span>原密码:</span><input style="display:none" autocomplete="off" name="name"><input ng-change='autographOldChange()' ng-model="autograph.oldPassword" type="Password" maxlength="6"></li>
+				<li><span>新密码:</span><input ng-change='autographNewChange()' ng-model="autograph.newPassword" type="Password"  maxlength="6"></li>
+				<li ng-class="{'tishi':autographWarn != ''}">
+					<span>密码确认:</span>
+					<input ng-change='autographCmNewChange()' ng-model="autograph.cmNewPassword" type="Password"  maxlength="6">
+				</li>
+				<p ng-if="autographWarn != ''" class="autographWarn" ng-bind="autographWarn"></p>
+			</ul>
+			<button ng-click="autographClick()">确定</button>
+		</div>
+	</div>
+	<div class="modify-user" ng-if='isHide == "user"'>
+		<ul>
+			<h5>暂不支持修改个人资料</h5>
+			<li><span>姓名</span><p>{{userData.doctorName}}</p></li>
+			<li><span>性别</span><p>{{userData.sex == '1'?'男':'女'}}</p></li>
+			<li><span>医院</span><p>{{userData.hospitalName}}</p></li>
+			<li><span>科室</span><p>{{userInfo.data.deptName}}</p></li>
+			<li><span>职称</span><p>{{userInfo.data.titleName}}</p></li>
+			<li><span>简介</span><p>{{userData.description}}</p></li>
+			<li><span>擅长</span><p>{{userData.personalGood}}</p></li>
+		</ul>
+	</div>
+</div>

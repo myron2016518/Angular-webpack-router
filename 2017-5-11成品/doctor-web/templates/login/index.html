@@ -1,0 +1,53 @@
+<style>
+	.main{
+    	margin: 0 !important;
+	}
+</style>
+<div class="login">
+<div class="login-bg" >
+	<div class="login-main">
+		<!--<div class="login-logo clearfix">
+			<img src="./images/bg.png">
+		</div>-->
+			<div class="login-form">
+				<div class="login-input">
+					<!--<div class="input-group-addon username"></div>-->
+					<span class="icon-icon_phone input-group-addon"></span>
+					<input type="text" class="form-control " ng-model="form.mobile" name="mobile" placeholder="输入手机号" autocomplete="off">
+				</div>
+				<div class="login-input">
+					<!--<div class="input-group-addon password"></div>-->
+					<span class="icon-icon_password input-group-addon"></span>
+					<!-- <input type="password" class="form-control password" style="position:absolute;z-index:-999"> -->
+					<input type="password" class="form-control " ng-model="form.password" ng-keyup="myKeyup($event)" name="password" placeholder="输入密码" autocomplete="off">
+				</div>
+				<div class="prompt">
+					<ul>
+						<li ng-show="userPro">账户用户名错误</li>
+						<li ng-show="pwdPro" >密码出错</li>
+						<li ng-show="serviceShow" >必须同意服务协议才能登录</li>
+					</ul>
+				</div>
+				
+				<div class="login-handle clearfix">
+					<a href="javascript:;"  ng-class="{true:'remember on',false:'remember'}[isRemember]" ng-click="toggleRemember()">记住账号</a>
+					<a href="javascript:;" class="forgot" ng-click="kefuClick()" title="客服电话:0755-26656589">忘记密码？</span>
+					<!--<div class="pop" ng-if="kefuIs">
+				    	<p>
+				    		客服电话:<br/>
+							0755-26656589
+				    	</p>
+				    </div>-->
+				</div>
+				<a class="login-submit" href="javascript:;" ng-click="loginClick()">登录</a>
+				
+				<a href="javascript:;" class="yyyhttplink"  ng-class="{true:'icon-rb_pre2-_unelect on',false:'icon-rb_pre2'}[isRememberXY]" ng-click="toggleRememberXY()"></a>
+				<!-- ng-href="#" target="_blank" -->
+				<a href="/#!/agreement" class="yyyhttplinkAc"  target="_blank" >我已详细阅读并接受《思瑞互联网医院医生服务协议》</a>
+				
+				
+			</div>
+	</div>
+	
+</div>
+</div>
