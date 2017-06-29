@@ -1,0 +1,47 @@
+.starttrial{
+  padding: 300px 160px 0px 160px;
+  .slTitle{
+      font-size: 20px;
+       color: #666;
+  }
+  .screen-list{
+    text-align: center;
+    overflow: hidden;
+  }
+  .details-2{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    li{
+      display: block;
+      color: #666;
+      line-height: 36px;
+      font-size: 16px;
+      span{
+        padding-right: 8px;
+      }
+      .login-submit{
+        height: 40px;
+        line-height: 40px;
+        background: #09CACD;
+        text-decoration: none;
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+        display: block;
+        width: 320px;
+        border-radius: 4px;
+        letter-spacing: 2px;
+        margin-top: 30px !important;
+        margin:auto;
+      }
+      .login-submit:active{
+        color: #fff;
+        background: #07bob2;
+        outline: 0;
+        -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+      }
+    }
+  }
+}

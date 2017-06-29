@@ -1,0 +1,94 @@
+<style>
+	.main{
+    	margin: 0 !important;
+	}
+</style>
+<div class="login">
+<div class="login-bg" >
+	<h3><i class="icon-logo"></i><span>|</span><p>互联网医院</p></h3>
+	<div class="login-main">
+		<div class="login-title">
+			<ul>
+				<li ng-click="tabSwitch('mobile')" ng-class="{'active':switch == 'mobile'}">验证码登录</li>
+				<span></span>
+				<li ng-click="tabSwitch('password')" ng-class="{'active':switch == 'password'}">密码登录</li>
+			</ul>
+		</div>
+		<!--<div class="login-logo clearfix">
+			<img src="./images/bg.png">
+		</div>-->
+			<div class="login-form" ng-show="switch == 'password'">
+				<div class="login-input" style="margin-bottom: 0px;">
+					<!--<div class="input-group-addon username"></div>-->
+					<span class="icon-icon_phone input-group-addon"></span>
+					<input type="text" class="form-control " ng-model="form.mobile" name="mobile" placeholder="输入手机号" autocomplete="off">
+				</div>
+				<div class="prompt">
+					<ul>
+						<li ng-show="userPro1">{{proText1}}</li>
+						<!--<li ng-show="pwdPro" >密码出错</li>
+						<li ng-show="serviceShow" >必须同意服务协议才能登录</li>-->
+						<li ng-show="!serviceShow&&!pwdPro&&!serviceShow">&nbsp;</li>
+					</ul>
+				</div>
+				<div class="login-input" style="margin-bottom: 0px;">
+					<!--<div class="input-group-addon password"></div>-->
+					<span class="icon-icon_password input-group-addon"></span>
+					<!-- <input type="password" class="form-control password" style="position:absolute;z-index:-999"> -->
+					<input type="password" class="form-control " ng-model="form.password" ng-keyup="myKeyup($event)" name="password" placeholder="输入密码" autocomplete="off">
+				</div>
+
+				
+				<div class="login-handle clearfix">
+					<a href="javascript:;"  ng-class="{true:'remember on',false:'remember'}[isRemember]" ng-click="toggleRemember()">记住账号</a>
+					<a href="javascript:;" class="forgot" ng-click="kefuClick()" title="客服电话:0755-26656589">忘记密码？</span>
+					<!--<div class="pop" ng-if="kefuIs">
+				    	<p>
+				    		客服电话:<br/>
+							0755-26656589
+				    	</p>
+				    </div>-->
+				</div>
+				<a class="login-submit" href="javascript:;" ng-click="loginClick()">登录</a>
+				
+				<a href="javascript:;" class="yyyhttplink"  ng-class="{true:'icon-rb_pre2-_unelect on',false:'icon-rb_pre2'}[isRememberXY]" ng-click="toggleRememberXY()"></a>
+				<!-- ng-href="#" target="_blank" -->
+				<a href="swi-doctor-web/#!/agreement" class="yyyhttplinkAc"  target="_blank" >我已详细阅读并接受《思瑞互联网医院医生服务协议》</a>
+				
+				
+			</div>
+			<div class="login-form"  ng-show="switch != 'password'">
+				<div class="login-input" style="margin-bottom: 0px;">
+					<!--<div class="input-group-addon username"></div>-->
+					<span class="icon-icon_phone input-group-addon"></span>
+					<input type="text" class="form-control " ng-model="dynamic.mobile" name="mobile" placeholder="输入手机号" autocomplete="off" maxlength="11">
+				</div>
+				<div class="prompt">
+					<ul>
+						<li ng-show="userPro">{{proText}}</li>
+						<!--<li ng-show="pwdPro" >密码出错</li>
+						<li ng-show="serviceShow" >必须同意服务协议才能登录</li>-->
+						<li ng-show="!serviceShow&&!pwdPro&&!serviceShow">&nbsp;</li>
+					</ul>
+				</div>
+				<div class="login-input" style="margin-bottom: 0px;">
+					<!--<div class="input-group-addon password"></div>-->
+					<span class="icon-icon_password input-group-addon"></span>
+					<!-- <input type="password" class="form-control password" style="position:absolute;z-index:-999"> -->
+					<input type="text" class="form-control " style="width: 150px;" ng-model="dynamic.mobileCode" ng-keyup="myKeyup($event)" name="password" placeholder="输入验证码" autocomplete="off">
+					<a ng-click='change()' ng-bind="timer.data"></a>
+				</div>
+				<div class="verification" ng-show="timer.kedian">验证码已发送给该手机，请注意查收。</div>
+				<div class="verification" ng-show="!timer.kedian">&nbsp;</div>
+				<a class="login-submit" href="javascript:;" ng-click="loginClick()">登录</a>
+				
+				<a href="javascript:;" class="yyyhttplink"  ng-class="{true:'icon-rb_pre2-_unelect on',false:'icon-rb_pre2'}[isRememberXY]" ng-click="toggleRememberXY()"></a>
+				<!-- ng-href="#" target="_blank" -->
+				<a href="swi-doctor-web/#!/agreement" class="yyyhttplinkAc"  target="_blank" >我已详细阅读并接受《思瑞互联网医院医生服务协议》</a>
+				
+				
+			</div>
+	</div>
+	
+</div>
+</div>

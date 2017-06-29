@@ -1,0 +1,238 @@
+
+<style>
+	.main{
+    	margin-top: 0 !important;
+	}
+</style>
+<div class="prescribe"  ng-init="getPDetail()">
+	
+	
+	<script type="text/ng-template" id="PWDDialogId">
+	
+      
+	        <div  ng-if="!inputPwdShow" class="ngdialog-message">
+	        	<div ng-if="!PWDandPro">
+		            <p class="mimatitle">输入签名密码</p>
+					<p>
+						<input style="display:none" autocomplete="off" name="name">
+		            	<input type="password" name="name" id="mypassword"  maxlength="6" class="form-control password" ng-change="inputChange()" onkeyup="this.value=this.value.replace(/[^\d]/ig,'')"  ng-model="form.inputpassword"  placeholder="输入密码" autocomplete="off" >
+		            </p>
+	            </div>
+	            <!--<p class="error" ng-if="inputPwdShow">签名密码错误，请重新输入。</p> -->
+	            
+	            <div ng-if="PWDandPro">
+			    
+			            <p class="proText">{{submitProText}}</p>
+			            <p>
+			            	<a class="login-submit havaBG" href="javascript:;"  ng-click="closeThisDialog()" ng-if="isSubmit">确认</a>
+			      		</p>
+		        </div>
+	        </div>
+	       
+	       <div  ng-if="inputPwdShow" class="ngdialog-message">
+	            <p class="mimatitle">处方签名密码错误，请重试。</p>
+				<p>
+					<a class="login-submit close-this-dialog wangjipassword" href="javascript:;"  ng-click="wangjipassword()" >忘记密码</a>
+	            	<a class="login-submit paswordRetry" href="javascript:;"  ng-click="paswordRetry()" >重试</a>
+	            </p>
+	            
+	        </div>
+	        
+    
+    </script>
+    
+    
+    <script type="text/ng-template" id="UpdatePWDDialogId">
+    	<div ng-if="!showChangeYZM">
+			<div class="ngdialog-message">
+				<p class="updataPwdTitle">忘记处方签名密码</p>
+	        	<p class="upp1">手机号：
+	        		<input type="text" class="form-control phone1"  ng-model="form.inputPhone"  placeholder="输入手机号" autocomplete="off" >
+	        	</p>
+	            <p class="upp2">验证码：
+					<input style="display:none" autocomplete="off" name="name">
+	           		<input type="text" class="form-control inputYZMPhone"   ng-model="form.inputYZM"  placeholder="输入校验码" autocomplete="off" >
+	   				<a class="" ng-if="!userPhoneStatus" href="javascript:;"  ng-click="changeYZMStatus()" >发送校验码</a>
+	        		<a class="" href="javascript:;" ng-if="userPhoneStatus" >重发({{YZMTime}})</a>
+	        	
+	            	
+	            </p>
+	            <p ng-if="inputYZMShow" style="color: #FF3C00;">校验码错误 </p>
+	        </div>
+	        <div class="ngdialog-buttons">
+	             <a class="login-submit close-this-dialog" href="javascript:;"  ng-click="closeYanzhengma()" >下一步</a>
+	        </div>
+        </div>
+        <div ng-if="showChangeYZM">
+			<div class="ngdialog-message">
+				<p class="updataPwdTitle">重置处方签名密码</p>
+	        	<p class="upp1">
+	        		<label style="margin-right: 16px;">新密码：</label> 
+	        		<input type="password" class="form-control phone1"  maxlength="6" ng-model="form.inputNewPWD" onkeyup="this.value=this.value.replace(/[^\d]/ig,'')"   placeholder="" autocomplete="off" >
+	        	</p>
+	            <p class="upp2">
+	            	<label>密码确认：</label> 
+	           		<input type="password" class="form-control phone1"  maxlength="6"   ng-model="form.inputNewPWDRepeat"  onkeyup="this.value=this.value.replace(/[^\d]/ig,'')"  placeholder="" autocomplete="off" >
+	   				
+	            </p>
+	            <p style="font-size: 14px;color: #ff3c00;" ng-if="ispwdcfPro">请确认两次密码都准确无误。</p>
+	        </div>
+	        <div class="ngdialog-buttons">
+	             <a class="login-submit close-this-dialog" href="javascript:;"  ng-click="updataPWD()" >确定</a>
+	        </div>
+        </div>
+    </script>
+    <script type="text/ng-template" id="timeoutPrompt">
+        <div class="ngdialog-message">
+            <p >审单时间已超时，即将返回开始审单页面。</p>
+        </div>
+    </script>
+    
+    <script type="text/ng-template" id="firstDialogId">
+        <div class="ngdialog-message">
+            <p >您有新的待审核处方，请点击下方按钮开始审核。</p>
+
+        </div>
+        <div class="ngdialog-buttons">
+            <button type="button" class="ngdialog-button " style="display: inline;" ng-click="confirm()">开始审核</button>
+        </div>
+    </script>
+    
+    <div class="head">
+		<div class="content" >
+			<!--<div class="logo"><img src="../../images/icon_logo.png" /></div>-->
+			<div class="suspensionOrder"><a href="javascript:;" class="login-submit" ng-click="pauseInquiry()" >暂停接单</a>{{houzhen.total}}人候诊中</div> 
+		  	<div  class="cdt">
+				接诊时长 {{countDownTime | date:'mm:ss'}}
+			</div>
+		</div>
+		
+	</div>
+		
+	<div class="patientRecord screen-list">
+		<div class="patientRecordTitle parInfo" ><span class="title1">患者病历</span><span class="title2">{{patientInfo.username + '/'+patientInfo.sex + '/'+patientInfo.age + '岁'}}</span></div>
+		<ul class="parDetail">
+			<li>
+				<p class="description">主诉/现病史：</p>
+				<p>{{patientInfo.chiefComplaint}}</p>
+			</li>
+			<li>
+				<p class="description">既往病史：</p>
+				<p>{{patientInfo.pastHistory}}</p>
+			</li>
+			<li>
+				<p class="description">初步诊断：</p>
+				<p><input type="text" placeholder="请填写" ng-model="patientInfo.preliminaryDiagnosis"  /></p>
+			</li>
+			<li>
+				<p class="description">治疗意见：</p>
+				<p>{{patientInfo.doctorAdvice}}</p>
+			</li>
+		</ul>
+	</div>
+	<div class="prescribeList screen-list">
+		<div class="patientRecordTitle">处方<span>目前仅支持开具普通处方</span></div>
+		<div class="list">
+			<div class="titleDescription">处方笺<span>普通处方开药量请勿超过 7 天</span></div>
+			
+			<ul id="mytestList">
+				<li class="title">
+					<span>药品名称</span>
+					<span>规格</span>
+					<span>用法</span>
+					<span>用药频次</span>
+					<span>单次剂量</span>
+					<span>开药量</span>
+					<span>操作</span>
+				</li>
+				<!--<li  ng-repeat="item in prescribeInputList">
+					<span><input type="text" placeholder="请点击填写药品" ng-change="inputprescribe($index,'drugName')" ng-model="item.drugName.name" ng-class="{'showError':!item.drugName.stauts}" /></span>
+					<span><input type="text" placeholder="请填写药品规格" ng-change="inputprescribe($index,'specifications')" ng-model="item.specifications.name" ng-class="{'showError':!item.specifications.stauts}" /></span>
+					<span ><input type="text" placeholder="请填写用法" ng-change="inputprescribe($index,'usage')" ng-model="item.usage.name" ng-class="{'showError':!item.usage.stauts}" /></span>
+					<span><input type="text" placeholder="请填写用药频次" ng-change="inputprescribe($index,'frequency')" ng-model="item.frequency.name" ng-class="{'showError':!item.frequency.stauts}" /></span>
+					<span>
+						<input type="text" class="numberand" placeholder="数量" ng-change="inputprescribe($index,'unitDose')" ng-model="item.unitDose.name" ng-class="{'showError':!item.unitDose.stauts}" />
+						<input type="text" class="numberand" placeholder="单位" ng-change="inputprescribe($index,'unitDoseUnits')" ng-model="item.unitDoseUnits.name" ng-class="{'showError':!item.unitDoseUnits.stauts}" />
+					</span>
+					<span>
+						<input type="text" class="numberand" placeholder="数量" ng-change="inputprescribe($index,'amount')" ng-model="item.amount.name" ng-class="{'showError':!item.amount.stauts}" />
+						<input type="text" class="numberand" placeholder="单位" ng-change="inputprescribe($index,'numberUnits')" ng-model="item.numberUnits.name" ng-class="{'showError':!item.numberUnits.stauts}" />
+					</span>
+					<span><a ng-click="del($index)">清空</a></span>
+					<div ng-if="item.isShowAC" class="containerAC">
+						<ul>
+							<li ng-repeat="itemac in ACList" ng-click="selectprescribe($parent.$index,itemac)">
+								{{itemac.drugName + ' ('+ itemac.specifications+ ')'}}
+							</li>
+						</ul>
+					</div>
+				</li>-->
+				<li  ng-repeat="item in prescribeInputList">
+					<span><input type="text" placeholder="请点击填写药品" ng-model-options="{debounce:2000}" ng-change="inputprescribe($index,'drugName')" ng-model="item.drugName.name" ng-class="{'showError':!item.drugName.stauts}" /></span>
+					<span><input type="text" placeholder="请填写药品规格" ng-model-options="{debounce:2000}" ng-change="inputprescribe($index,'specifications')" ng-model="item.specifications.name" ng-class="{'showError':!item.specifications.stauts}" /></span>
+					
+					<span >
+						<select  ng-class="{'showErrorSelect':!item.usage.stauts,'optionT':item.usage.name!='0'}"  class="form-control" ng-model="item.usage.name" ng-init="item.usage.name='0'" >
+							<option value="0">请填写用法</option>
+							<option ng-repeat="itemSelect in usageList" >{{itemSelect}}</option>
+						</select>
+					</span>
+					
+					<span >
+						<select ng-class="{'showErrorSelect':!item.frequency.stauts,'optionT':item.frequency.name!='0'}"  class="form-control" ng-model="item.frequency.name" ng-init="item.frequency.name='0'" >
+							<option value="0">请填写用药频次</option>
+							<option ng-repeat="itemSelect in frequencyList" >{{itemSelect}}</option>
+						</select>
+					</span>
+					
+					<span  >
+						
+							<!--<select class="form-control numberand" ng-model="item.unitDose.name" ng-init="item.unitDose.name='0'" ng-class="{'optionT':item.unitDose.name!='0'}">
+								<option value="0">数量</option>
+								<option ng-repeat="itemSelect in unitDoseList" >{{itemSelect}}</option>
+							</select>-->
+							<input type="text" class="numberand" placeholder="数量" ng-change="inputprescribe($index,'unitDose')"  onkeyup='this.value = this.value.replace(/[^\d.]/g,"");this.value = this.value.replace(/^\./g,"");this.value = this.value.replace(/([0-9]+\.[0-9]{2})[0-9]*/,this.value.substring(0,this.value.indexOf(".")+3));this.value= this.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");'  ng-model="item.unitDose.name" ng-class="{'showError':!item.unitDose.stauts}" />
+					
+							<select ng-class="{'showErrorSelect':!item.unitDoseUnits.stauts,'optionT':item.unitDoseUnits.name!='0'}" class="form-control numberand" ng-model="item.unitDoseUnits.name" ng-init="item.unitDoseUnits.name='0'" >
+								<option value="0">单位</option>
+								<option ng-repeat="itemSelect in unitDoseUnitsList" >{{itemSelect}}</option>
+							</select>
+					
+					</span>
+					<span >
+					
+							<!--<select class="form-control numberand" ng-model="item.amount.name" ng-init="item.amount.name='0'" ng-class="{'optionT':item.amount.name!='0'}">
+								<option value="0">数量</option>
+								<option ng-repeat="itemSelect in numberList" >{{itemSelect}}</option>
+							</select>-->
+							<input type="text" class="numberand" placeholder="数量" ng-change="inputprescribe($index,'amount')" ng-model="item.amount.name" ng-class="{'showError':!item.amount.stauts}" />
+				
+							<select  ng-class="{'showErrorSelect':!item.numberUnits.stauts,'optionT':item.numberUnits.name!='0'}" class="form-control numberand" ng-model="item.numberUnits.name" ng-init="item.numberUnits.name='0'" >
+								<option value="0">单位</option>
+								<option ng-repeat="itemSelect in numberUnitsList" >{{itemSelect}}</option>
+							</select>
+					
+					</span>
+					<span><a ng-click="del($index)">清空</a></span>
+					<div ng-if="item.isShowAC" class="containerAC">
+						<ul>
+							<li ng-repeat="itemac in ACList" ng-click="selectprescribe($parent.$index,itemac)">
+								{{itemac.drugName + ' ('+ itemac.specifications+ ')'}}
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+				
+			</ul>
+			<p class="description2" >处方说明</p>
+			<textarea ng-if="isHavaDescription" class="prescriptionDescription" placeholder="请填写处方说明...(140字)" ng-model="form.prescriptionDescription" maxlength="140" ></textarea>
+			<a href="javascript:;" class=" btn login-submit submitPrescribe" ng-click="submitprescribe()" >提交处方</a>
+		</div>
+		
+		
+		
+		
+	</div>
+
+</div>

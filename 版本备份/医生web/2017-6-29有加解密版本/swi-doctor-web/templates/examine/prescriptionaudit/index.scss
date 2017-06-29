@@ -1,0 +1,491 @@
+.prescriptionaudit {
+    height: 800px;
+    background-color: #eee;
+    
+    .head {
+        width: 100%;
+        height: 60px;
+        background: #09cacd;
+        -webkit-box-shadow: 0 0 10px rgba(101, 101, 101, 0.5);
+        -moz-box-shadow: 0 0 10px rgba(101, 101, 101, 0.5);
+        box-shadow: 0 0 10px rgba(101, 101, 101, 0.5);
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 0 auto;
+        
+        .content {
+            width: 1100px;
+            margin: 0 auto;
+            height: 61px;
+            position: relative;
+            line-height: 60px;
+            color: #eee;
+            font-size: 16px;
+            background: #09cacd;
+            a{
+                color: #eee;
+                border: 1px solid #EEEEEE;
+                border-radius: 4px;
+                padding: 3px 17px 3px 17px;
+            }
+            a:focus{outline:none;}
+            .suspensionOrder{
+                float: left;
+                width: 20%;
+                margin-left: 20px;
+                a{
+                    margin-right: 20px;
+                }
+            }
+            .cdt {
+                text-align: -webkit-center;
+                text-align: center;
+                float: left;
+                width: 60%;
+                font-weight: bold;
+            }
+            .stopOrder{
+                float: right;
+            }
+            .pop3{
+                display: none;
+                position: absolute;
+                right: -10px;
+                top: 0px;
+                width: 110px;
+                background: #fff;
+                position: relative;
+                border-radius: 5px;
+                float: right;
+                z-index: 10;
+                -webkit-box-shadow:0 0 10px rgba(183, 182, 182, 0.5);  
+                -moz-box-shadow:0 0 10px rgba(183, 182, 182, 0.5);  
+                box-shadow:0 0 10px rgba(183, 182, 182, 0.5);
+                font-size:16px;
+                line-height:54px;
+                color:#666;
+                text-align:center;
+                cursor:pointer;
+                a{
+                    color: #666666;
+                    font-size: 16px;
+                    border:none;
+                    i{
+                        display:block;
+                        float:left;
+                        font-size:26px;
+                        padding-right: 8px;
+                        padding-top: 14px;
+                        padding-left: 20px;
+                    }
+                    span{
+                        display:block;
+                        float:left;
+                    }
+                }
+                p{
+                    border-radius: 5px;
+                }
+                p:hover{
+                    background-color: #F5F5F5;
+                    border: none;
+                }
+            }
+            .pop3:before{
+                content:"";
+                position: absolute;
+                right: 48px;
+                top: -7px;
+                width: 0;
+                height: 0;
+                border-bottom: 7px solid #fff;
+                border-right: 7px solid transparent;
+                border-left: 7px solid transparent;
+            }
+            
+        }
+        
+    }
+    .screen-list {
+        margin-top: 82px;
+        overflow: hidden;
+        width: 48%;
+        float: left;
+        margin-left: 20px;
+        height: 710px;
+        background-color: #ffffff;
+        
+    }
+    .patientInformation {
+        background-color: #FFFFFF;
+        .patientRecord {
+            margin-bottom: 10px;
+            .userInfoShow{
+                border: 1px solid #FFFFFF !important;
+                background-color: #FFFFFF !important;
+            }
+            ul {
+                padding: 10px;
+                li {
+                    line-height: 30px;
+                    .description {
+                        color: #666666;
+                    }
+                    p{
+                        font-size: 12px;
+                        color: #666666;
+                    }
+                    textarea {
+                        padding-top: 5px;
+                        background-color: #e6edf0;
+                        font-size: 14px;
+                        width: 100%;
+                        height: 60px;
+                        border: 1px solid #eee;
+                        border-radius: 5px;
+                        text-indent: 5px;
+                    }
+                    .userPhoneSave {
+                        height: 30px;
+                        line-height: 30px;
+                        text-decoration: none;
+                        font-size: 14px;
+                        color: #ff6600;
+                        text-align: center;
+                    }
+                    
+                    
+                }
+            }
+            .form-control{
+                background-color: #eee;
+                border: 1px solid #eee;
+                outline: none;
+                text-indent: 5px;
+                height: 30px;
+                border-radius: 4px;
+            }
+            .phone{
+                width: 105px;
+            }
+            
+            .patientInfo {
+                border-bottom: 1px solid #eee;
+                padding: 10px;
+                line-height: 50px;
+                span {    
+                    margin-right: 10px;
+                }
+                
+                .username{
+                    width: 55px;
+                }
+                .sex{
+                    width: 30px;
+                }
+                .age{
+                    width: 50px;
+                }
+                .userInfoSave {
+                    height: 30px;
+                    line-height: 30px;
+                    text-decoration: none;
+                    font-size: 14px;
+                    color: #ff6600;
+                    text-align: center;
+                }
+            }
+        }
+        .saveCase{
+            margin-top: 13px;
+            margin-left: 110px;
+            float: left;
+            height: 30px;
+            line-height: 30px;
+            background: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            color: #09cacd;
+            text-align: center;
+            display: block;
+            width: 100px;
+            border-radius: 4px;
+            letter-spacing: 2px;
+            border: 1px solid #09cacd;
+            outline: 0;
+        }
+        .saveandprescribe{
+            margin-top: 13px;
+            margin-right: 110px;
+            float: right;
+            height: 30px;
+            line-height: 30px;
+            background: #09cacd;
+            text-decoration: none;
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            display: block;
+            width: 176px;
+            border-radius: 4px;
+            letter-spacing: 2px;
+            border: 1px solid #09cacd;
+            outline: 0;
+        }
+        
+    }
+    
+}
+
+
+.ngdialog-voerWenZhen{
+    .ngdialog-content {
+        p {
+            text-align: -webkit-center;
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+            padding: 10px;
+        }
+        .login-submit {
+            height: 40px;
+            line-height: 40px;
+            background: #09CACD;
+            text-decoration: none;
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            display: inline-block;
+            width: 230px;
+            border-radius: 4px;
+            letter-spacing: 2px;
+            outline: 0;
+        }
+        .login-submit:active {
+            background: #07bob2;
+            outline: 0;
+            -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+        }
+    }
+}
+.ngdialog-RCI {
+    .ngdialog-content {
+        padding: 0px !important;
+        .ngdialog-message {
+            margin-bottom: 0px !important;
+            p {
+                text-align: -webkit-center;
+                text-align: center;
+                font-size: 16px;
+                color: #666;
+            }
+            a{
+                color: #666;
+                font-size: 22px;
+                margin-right: 14px;
+                vertical-align: text-top;
+                outline: 0;
+            }
+            
+            textarea{
+                width: 346px;
+                height: 86px;
+                color: #666;
+                font-size: 14px;
+                border: 1px solid #E0E0E0;
+                margin-bottom: 20px;
+                text-indent: 5px;
+            }
+            .RCIDtitle{
+                border-bottom: 1px solid #CCCCCC;
+                padding: 14px 0px 14px 0px;
+            }
+            .yyone{
+                
+                padding-top: 32px;
+            }
+            .yytwo{
+                padding: 24px 0px 42px 0px;
+            }
+            .isClickYY{
+                color: #09CACD;
+            }
+            .yypadding{
+                padding: 24px 0px 22px 0px;
+            }
+            .mimatitle{
+                padding: 50px 0px 40px 0px;
+            }
+            .proText{
+                padding: 80px 0px 30px 0px;
+                font-size: 22px;
+            }
+            .havaBG{
+                background-color: #09CACD !important;
+                color: #fff !important;
+            }
+            
+            .form-control {
+                height: 40px;
+                border: #b1b1b1 1px solid;
+                color: #999999;
+                font-size: 14px;
+                border-radius: 4px;
+                outline: none;
+                text-indent: 5px;
+            }
+            .error{
+                padding-top: 30px;
+                color: #ff3c00;
+            }
+            .login-submit {
+                height: 40px;
+                line-height: 40px;
+                text-decoration: none;
+                font-size: 16px;
+                text-align: center;
+                display: inline-block;
+                width: 160px;
+                border-radius: 4px;
+                letter-spacing: 2px;
+                background: none;
+                color: #09CACD;
+                border: #09CACD 1px solid;
+            }
+            .login-submit:active {
+                background: #07bob2;
+                outline: 0;
+                -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+                box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+            }
+            .wangjipassword{
+                margin-right: 24px;
+            }
+        }
+        .ngdialog-buttons {
+            text-align: -webkit-center;
+            text-align: center;
+            margin-bottom: 30px;
+            .form-control {
+                height: 40px;
+                border: #b1b1b1 1px solid;
+                color: #999999;
+                font-size: 14px;
+                border-radius: 4px;
+                outline: none;
+                text-indent: 5px;
+            }
+            .login-submit {
+                height: 40px;
+                line-height: 40px;
+                background: #09CACD;
+                text-decoration: none;
+                font-size: 16px;
+                color: #fff;
+                text-align: center;
+                display: inline-block;
+                width: 160px;
+                border-radius: 4px;
+                letter-spacing: 2px;
+            }
+            .login-submit:active {
+                background: #07bob2;
+                outline: 0;
+                -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+                box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+            }
+            p {
+                padding-top: 30px;
+                font-size: 14px;
+                color: #ff3c00;
+            }
+            .quxiao{
+                margin-right: 24px;
+                background: none;
+                color: #09CACD;
+                border: #09CACD 1px solid;
+            }
+        }
+    }
+}
+
+
+
+
+.ngdialog-UpdatePWD {
+    .ngdialog-content {
+        padding: 0px !important;
+        .ngdialog-message {
+            margin-bottom: 0px !important;
+            p {
+                text-align: -webkit-center;
+                text-align: center;
+                font-size: 16px;
+                color: #666;
+                .phone1{
+                    width: 230px;
+                }
+            }
+            .updataPwdTitle{
+                padding: 30px 0px 24px 0px;
+            }
+            .upp1{
+                margin-bottom: 20px;
+            }
+            .upp2{
+                margin-bottom: 5px;
+                .inputYZMPhone{
+                    width: 130px;
+                }
+                a{
+                    background-color:#E5E5E5 ;
+                    color: #666;
+                    font-size: 14px;
+                    height: 40px;
+                    line-height: 40px;
+                    text-decoration: none;
+                    text-align: center;
+                    display: inline-block;
+                    width: 100px;
+                }
+            }
+            .form-control {
+                height: 40px;
+                border: #b1b1b1 1px solid;
+                color: #999999;
+                font-size: 14px;
+                border-radius: 4px;
+                outline: none;
+                text-indent: 5px;
+            }
+            
+        }
+        .ngdialog-buttons {
+            text-align: -webkit-center;
+            text-align: center;
+            .login-submit {
+                margin-top: 15px;
+                height: 40px;
+                line-height: 40px;
+                background: #09CACD;
+                text-decoration: none;
+                font-size: 16px;
+                color: #fff;
+                text-align: center;
+                display: inline-block;
+                width: 160px;
+                border-radius: 4px;
+                letter-spacing: 2px;
+            }
+            .login-submit:active {
+                background: #07bob2;
+                outline: 0;
+                -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+                box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+            }
+            
+        }
+    }
+}

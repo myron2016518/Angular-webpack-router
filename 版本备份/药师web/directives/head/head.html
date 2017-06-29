@@ -1,0 +1,36 @@
+<div class="head hide" ng-class="{'show':ishead}">
+	<div class="content hide" ng-class="{'show':headClick}">
+		<div class="logo"><img src="../../images/icon_logo.png" /></div>
+	    <ul>
+	        <li ui-sref="examine.starttrial" ui-sref-active="nav-active"><i><img src="../../images/icon_review-.png"></i><p>处方审核</p></li>
+	        <li ui-sref="history"  ui-sref-active="nav-active"><i><img src="../../images/icon_history.png"></i><p>审核历史</p></li>
+	        <li ui-sref="user"  ui-sref-active="nav-active"><i><img src="../../images/icon_user.png"></i><p>账号管理</p></li>
+	    </ul>
+	    <div class="btn" ng-click="logout()"><i><img src="../../images/icon_quit.png"></i><p>退出</p></div>
+	    <div class="kefu" ng-click="kefuClick()"><i><img src="../../images/icon_service.png"></i><p>客服</p></div>
+	    <div class="pop hide" ng-class="{'show':kefuIs}">
+	    	<p>
+	    		客服电话:<br/>
+				0755-26656589
+	    	</p>
+	    </div>
+	</div>
+	<div class="content hide" ng-class="{'show':!headClick}">
+		<!--<div class="logo"><img src="../../images/icon_logo.png" /></div>-->
+	    <ul >
+	    	 <li ng-click="stopTrial()" ><i><embed src="../swiPharmacistWeb/img/icon_leave.svg"></i><p>停止审方</p></li>
+	       <!-- <li ng-click="stopTrial()" ><i><embed src="../../images/icon_leave.svg"></i><p>停止审方</p></li>-->
+	       <!--  <li><i><img src="../../images/icon_history.png"></i><p>审核历史</p></li>
+	       <li><i><img src="../../images/icon_user.png"></i><p>账号管理</p></li>-->
+	    </ul>
+	   <!-- <div class="btn"  ng-click="clickAlert()" ><i><img src="../../images/icon_quit.png"></i><p>退出</p></div>-->
+	    <!--<div class="kefu" ng-click="kefuClick()"><i><img src="../../images/icon_service.png"></i><p>客服</p></div>-->
+	    <div class="btn"  ng-click="suspensionOrder()" ><i><img src="../../images/icon_quit.png"></i><p>{{suspensionText}}</p></div>
+	    <div class="pop hide" ng-class="{'show':kefuIs}">
+	    	<p>
+	    		客服电话:<br/>
+				0755-26656589
+	    	</p>
+	    </div>
+	</div>
+</div>

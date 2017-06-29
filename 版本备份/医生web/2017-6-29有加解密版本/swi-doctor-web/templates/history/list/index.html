@@ -1,0 +1,41 @@
+<div class="history">
+	<div class="list">
+		<table>
+          <tr class="title">
+            <td>序号</td>
+            <td>处方编号</td>
+            <td>患者</td>
+            <td>患者提交时间</td>
+            <td>接诊时间</td>
+            <td>接诊时长</td>
+            <td>是否开处方</td>
+            <td>开处方时长</td>
+            <td>问诊状态</td>
+            <td>操作</td>
+          </tr>
+          <tr ng-repeat="x in list">
+            <td>{{$index+1}}</td>
+            <td>{{x.orderNo}}</td>
+            <td>{{x.patientName}}</td>
+            <td>{{ x.queueDate | date:'yyyy-MM-dd HH:mm:ss'}} </td>
+            <td>{{ x.inquiryDate | date:'yyyy-MM-dd HH:mm:ss'}} </td>
+            <td>{{x.queueDate - x.inquiryDate |date:'HH:mm:ss'}}</td>
+            <td ng-if="!x.prescriptionFlag">--</td>
+            <td ng-if="x.prescriptionFlag == '0'">未开处方</td>
+            <td ng-if="x.prescriptionFlag == '1'">开处方</td>
+            <td>{{ x.endDate - x.inquiryDate | date:'HH:mm:ss'}}</td>
+            <td ng-if="!x.orderStatus">--</td>
+            <td ng-if="x.orderStatus=='1'">等待接单</td>
+            <td ng-if="x.orderStatus=='2'">问诊中</td>
+            <td ng-if="x.orderStatus=='3'">开处方中</td>
+            <td ng-if="x.orderStatus=='4'">处方审核中</td>
+            <td ng-if="x.orderStatus=='5'">问诊完成</td>
+            <td ng-if="x.orderStatus=='6'">已关闭</td>
+            <td><a ui-sref="history.details({id:x.orderNo})">查看</a></td>
+          </tr>
+      </table>
+	</div>
+	<div class="page">
+		<div ui-pagination conf="conf"></div>
+	</div>
+</div>

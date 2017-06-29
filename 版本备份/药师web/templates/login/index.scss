@@ -1,0 +1,170 @@
+
+.login{
+    /*登录*/
+
+    .yyyhttplink{
+        margin-top: 30px;
+        margin-right: 9px;
+        width: 16px;
+        height: 18px;
+    }
+    .yyyhttplink{
+        color: #666666;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    .yyyhttplinkAc{
+        font-size: 14px;
+        color: #666666;
+        text-decoration: none;
+        float: left;
+        padding-top: 30px;
+    }
+    .prompt{
+        color: #ff3c00;
+        font-size: 12px;
+        padding-left: 8px;
+    }
+    .logo{
+        width: 200px;
+        height: 60px;
+        background: #09cacd;
+        text-align: center;
+        line-height: 60px;
+    }
+    .logo img{
+        vertical-align: middle;
+        height: 50px;
+        width: 75px;
+    }
+    .login-bg{
+        position: fixed;
+        top:0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(./images/bg.png);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 999
+    }
+    .login-main{
+        background-color: #fff;
+        width: 440px;
+        left: 50%;
+        position: absolute;
+        margin-left: -270px;
+        top: 50%;
+        margin-top: -190px;
+        padding: 50px;
+    }
+    .login-logo{
+        margin-bottom: 42px;
+        text-align: center;
+    }
+    .login-input{
+        margin-top: 8px;
+        margin-bottom: 16px;
+        border-radius: 10px;
+    }
+    .login-input .form-control{
+        
+        width:90%;
+        height: 50px;
+        border:#b1b1b1 1px solid;
+        color: #666666;
+        font-size: 14px;
+        border-radius: 10px;
+        outline:none;
+        border-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .input-group-addon{
+            float: left;
+            height: 50px;
+            padding: 0px 20px; 
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 50px;
+            color: #555;
+            text-align: center;
+            background-color: #fff;
+            border: #b1b1b1 1px solid;
+            border-radius: 10px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 0;
+    }
+    .username{
+        background: url(./images/icon_phone.png) no-repeat 14px 15px;
+    }
+    .password{
+        background: url(./images/icon_password.png) no-repeat 14px 15px;
+    }
+    .login-input .form-control::-webkit-input-placeholder {
+        color: #d1d1d1;
+    }
+    .login-input .form-control::-moz-placeholder {
+        color: #d1d1d1;
+    }
+    .login-handle{
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+    .login-handle a{
+        color: #666666;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    .remember{
+        float: left;
+        padding-left: 35px;
+        background: url(./images/rb_pre.png) no-repeat 5px 2px;
+    }
+    .remember.on{
+        background: url(./images/_rb.png) no-repeat 5px 2px;
+    }
+    
+    .rememberXY{
+        float: left;
+        background: url(./images/rb_pre2.png) no-repeat 2px 3px;
+    }
+    .rememberXY.on{
+        background: url(./images/rb_pre2_no.png) no-repeat 2px 3px;
+    }
+    
+    
+    .forgot{
+        float: right;
+    }
+    .login-form .login-submit{
+        height: 50px;
+        line-height: 50px;
+        background: #09CACD;
+        text-decoration: none;
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+        display: block;
+        width: 100%;
+        border-radius: 10px;
+        letter-spacing: 5px;
+    }
+    .login-form .login-submit:active{
+        color: #fff !important;
+        background: #07bob2 !important;
+        outline: 0 !important;
+        -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125) !important;
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125) !important;
+    }
+    a:focus {  
+     outline:none;  
+     -moz-outline:none;  
+    }
+}
+
+
+
+

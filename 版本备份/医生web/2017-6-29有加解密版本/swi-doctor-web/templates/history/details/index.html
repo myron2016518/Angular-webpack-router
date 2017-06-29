@@ -1,0 +1,63 @@
+<style type="text/css">
+	.main{
+		background:#eee;
+	}
+</style>
+<div class="hisory-details">
+	<div class="location"><span>接诊历史</span><i> > </i><span>接诊列表</span><i> > </i><span>接诊详情</span><i>&nbsp&nbsp|&nbsp&nbsp</i><a ui-sref="history">返回上一页</a></div>
+	<div class="left">
+		<div class="list" ng-repeat="(key, value) in data.fileList">
+			<p><a><i class="icon-icon_video-history"></i><span>{{value.fileName}}</span></a></p>
+		</div>
+	</div>
+	<div class="center">
+		<div class="top">
+			<span>&nbsp</span>
+			<h4>与患者{{data.patientName}}对话</h4>
+			<span class="icon-icon_user"></span>
+		</div>
+		<div class="content">
+			<div  ng-repeat="(key, value) in data.imList" >
+				<div class="huazhe" ng-if='value.fromAccount != userInfo.data.imNo'>
+					<span class="icon_avatar"></span>
+					<div class="text">
+						<i class="icon"><img src="images/icon_avatar.png"></i>
+						<p ng-bind="value.body"></p>
+					</div>
+				</div>
+				<div class="yisheng" ng-if='value.fromAccount == userInfo.data.imNo'>
+				<span class="icon_doctor"></span>
+					<div class="text">
+						<i class="icon"><img src="images/icon_doctor.png"></i>
+						<p ng-bind="value.body"></p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="right">
+		<h4>{{data.patientName}}</h4>
+		<ul>
+			<li><p><span>性别:</span>{{data.sex == '1'?'男':'女'}}</p><p><span>年龄:</span>{{data.age}}岁</p></li>
+			<li><p><span>科室:</span>{{data.deptName}}</p></li>
+			<li><p><span>主诉/现病史:</span>{{data.caseDetail.chiefComplaint}}</p></li>
+			<li><p><span>既往史:</span>{{data.caseDetail.pastHistory}}</p></li>
+			<li><p><span>初步诊断:</span>{{data.caseDetail.preliminaryDiagnosis}}</p></li>
+			<li><p><span>治疗意见:</span>{{data.caseDetail.doctorAdvice}}</p></li>
+			<li><p><span>手机:</span>{{data.mobileNo}}
+			<i ng-if="data.caseDetail.doctorAdvice">已发送治疗意见</i>
+			</p></li>
+		</ul>
+		<div class="text">
+			<span>处方笺:</span>
+			<div style="overflow: auto;height: 275px;">
+				<p ng-repeat="x in data.prescriptionDrugList">
+					{{$index+1}}、{{x.drugName}}<br/>
+					{{x.specifications}}<br/>
+					{{x.usage}}
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

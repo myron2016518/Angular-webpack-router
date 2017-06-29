@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="mainCtrl">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <title ng-bind="title"></title>
+</head>
+<body>
+    <head-view click-alert ="clickAlert"  head-click="headClick" ishead="isHead" conf='logout' stop-trial='stopTrial' user-data='userInfo' login-out='loginOut'></head-view>
+    <div style="clear: both;"></div>
+    <div ui-view="main" class="main"></div>
+    <div class="loader-bg" ng-click="$event.stopPropagation()" ng-if="loader">
+        <div class="loader">
+            <div class="slice">
+                <div data-loader="circle-side"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

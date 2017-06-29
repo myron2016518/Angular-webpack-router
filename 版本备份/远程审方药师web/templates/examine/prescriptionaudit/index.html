@@ -1,0 +1,311 @@
+<div class="prescriptionaudit"  ng-init="getPDetail()"  >
+<!--<div class="prescriptionaudit" >-->
+	<script type="text/ng-template" id="yanzhengma">
+		
+	        <div class="ngdialog-message">
+	        	<p >绑定的手机号码：{{userPhoneShow}}
+	        		<a class="login-submit close-this-dialog" ng-if="!userPhoneStatus" href="javascript:;"  ng-click="changeYZMStatus()" >发送校验码</a>
+	        		<a class="login-submit close-this-dialog" href="javascript:;" ng-if="userPhoneStatus" style="background-color: #ccc;"  >发送校验码({{YZMTime}})</a>
+	        	</p>
+	            <p >输入校验码:
+					<input style="display:none" autocomplete="off" name="name">
+	           		<input type="text" class="form-control" style="margin-left: 5px;"   ng-model="userPhoneText"  placeholder="输入校验码" autocomplete="off" >
+	            	<span ng-if="inputYZMShow" style="color: #FF3C00;">校验码错误。</span> 
+	            </p>
+	            
+	        </div>
+	        <div class="ngdialog-buttons">
+	        	
+	             <a class="login-submit close-this-dialog" href="javascript:;"  ng-click="closeYanzhengma()" >提交</a>
+	        </div>
+   
+        
+    </script>
+    
+    <!--<script type="text/ng-template" id="inputPWDDialogId">
+		<div ng-if="PWDandPro">
+	        <div class="ngdialog-message">
+	            <p >输入签名密码</p>
+	
+	        </div>
+	        <div class="ngdialog-buttons">
+	        	<input style="display:none" autocomplete="off" name="name">
+	            <input type="password" maxlength="6" class="form-control password" ng-change="inputChange()" onkeyup="this.value=this.value.replace(/[^\d]/ig,'')"  ng-model="form.inputpassword"  placeholder="输入密码" autocomplete="off" >
+	            <p ng-if="inputPwdShow">签名密码错误，请重新输入。</p> 
+	        </div>
+        </div>
+        <div ng-if="!PWDandPro">
+	        <div class="ngdialog-message">
+	            <p >{{submitProText}}</p>
+	
+	        </div>
+	        <div class="ngdialog-buttons">
+	            <a class="login-submit close-this-dialog" href="javascript:;"  ng-click="closeThisDialog()" ng-if="isSubmit">确认</a>
+	        </div>
+        </div>
+    </script>-->
+    
+    <script type="text/ng-template" id="PWDDialogId">
+	
+      
+	        <div  ng-if="!inputPwdShow" class="ngdialog-message">
+	        	<div ng-if="!PWDandPro">
+		            <p class="mimatitle">输入签名密码</p>
+					<p>
+						<input style="display:none" autocomplete="off" name="name">
+		            	<input type="password" name="name" id="mypassword"  maxlength="6" class="form-control password" ng-change="inputChange()" onkeyup="this.value=this.value.replace(/[^\d]/ig,'')"  ng-model="form.inputpassword"  placeholder="输入密码" autocomplete="off" >
+		            </p>
+	            </div>
+	            <!--<p class="error" ng-if="inputPwdShow">签名密码错误，请重新输入。</p> -->
+	            
+	            <div ng-if="PWDandPro">
+			    
+			            <p class="proText">{{submitProText}}</p>
+			            <p>
+			            	<a class="login-submit havaBG" href="javascript:;"  ng-click="closeThisDialog()" ng-if="isSubmit">确认</a>
+			      		</p>
+		        </div>
+	        </div>
+	       
+	       <div  ng-if="inputPwdShow" class="ngdialog-message">
+	            <p class="mimatitle">处方签名密码错误，请重试。</p>
+				<p>
+					<a class="login-submit close-this-dialog wangjipassword" href="javascript:;"  ng-click="wangjipassword()" >忘记密码</a>
+	            	<a class="login-submit paswordRetry" href="javascript:;"  ng-click="paswordRetry()" >重试</a>
+	            </p>
+	            
+	        </div>
+	        
+    
+    </script>
+    
+    
+    <script type="text/ng-template" id="UpdatePWDDialogId">
+    	<div ng-if="!showChangeYZM">
+			<div class="ngdialog-message">
+				<p class="updataPwdTitle">忘记处方签名密码</p>
+	        	<p class="upp1">手机号：
+	        		<input type="text" class="form-control phone1"  ng-model="form.inputPhone"  placeholder="输入手机号" autocomplete="off" >
+	        	</p>
+	            <p class="upp2">验证码：
+					<input style="display:none" autocomplete="off" name="name">
+	           		<input type="text" class="form-control inputYZMPhone"   ng-model="form.inputYZM"  placeholder="输入校验码" autocomplete="off" >
+	   				<a class="" ng-if="!userPhoneStatus" href="javascript:;"  ng-click="changeYZMStatus()" >发送校验码</a>
+	        		<a class="" href="javascript:;" ng-if="userPhoneStatus" >重发({{YZMTime}})</a>
+	        	
+	            	
+	            </p>
+	            <p ng-if="inputYZMShow" style="color: #FF3C00;">校验码错误 </p>
+	        </div>
+	        <div class="ngdialog-buttons">
+	             <a class="login-submit close-this-dialog" href="javascript:;"  ng-click="closeYanzhengma2()" >下一步</a>
+	        </div>
+        </div>
+        <div ng-if="showChangeYZM">
+			<div class="ngdialog-message">
+				<p class="updataPwdTitle">重置处方签名密码</p>
+	        	<p class="upp1">
+	        		<label style="margin-right: 16px;">新密码：</label> 
+	        		<input type="password" class="form-control phone1"  maxlength="6" ng-model="form.inputNewPWD" onkeyup="this.value=this.value.replace(/[^\d]/ig,'')"   placeholder="" autocomplete="off" >
+	        	</p>
+	            <p class="upp2">
+	            	<label>密码确认：</label> 
+	           		<input type="password" class="form-control phone1"  maxlength="6"   ng-model="form.inputNewPWDRepeat"  onkeyup="this.value=this.value.replace(/[^\d]/ig,'')"  placeholder="" autocomplete="off" >
+	   				
+	            </p>
+	            <p style="font-size: 14px;color: #ff3c00;" ng-if="ispwdcfPro">请确认两次密码都准确无误。</p>
+	        </div>
+	        <div class="ngdialog-buttons">
+	             <a class="login-submit close-this-dialog" href="javascript:;"  ng-click="updataPWD()" >确定</a>
+	        </div>
+        </div>
+    </script>
+    
+    <script type="text/ng-template" id="timeoutPrompt">
+        <div class="ngdialog-message">
+            <p >审单时间已超时，即将返回接单页面。</p>
+        </div>
+    </script>
+    <script type="text/ng-template" id="notPassReason">
+        <div class="ngdialog-message">
+            <p >请填写不通过理由。</p>
+        </div>
+    </script>
+	<div class="screen-list">
+		
+		<!--<ul class="details-1">
+			<li>
+				<p>
+					<span>审方处理中</span>
+					<a class="login-submit" href="javascript:;" ng-click="stopTrial()">停止审方</a>
+				</p>
+			</li>
+		</ul>-->
+		<div class="left">
+		<!--	<iframe ng-if='!showTxtOrPDF' id='pdf' style="width: 497px;height:777px;" frameborder="0"></iframe>-->
+			<img ng-if='!showTxtOrPDF' id='pdf' style="width: 497px;height:777px;" ></img>
+			<div ng-if='showTxtOrPDF'  class="title">
+	  			<div>
+	  				
+	  			</div>
+	  			<h3>
+	  			{{prescriptionDetail.hospitalName}}	
+	  			<br/>处方笺
+		  		</h3>
+		  		<div class="type">
+		  			<p>
+		  				普通<br/>
+		  				处方
+		  			</p>
+		  		</div>
+	  		</div>
+	  		<div ng-if='showTxtOrPDF'  class="text">
+		  		<ul class="user-text">
+		  			<li>
+		  				<p>
+		  					<span>
+		  						No.
+		  					</span>
+		  					{{orderNo}}
+		  				</p>
+		  				<p>
+		  					<span>
+		  					开方日期:
+		  					</span>
+		  					{{prescriptionDetail.createDate | date:'yyyy.MM.dd'}}
+		  				</p>
+		  			</li>
+		  			<li>
+		  				<p>
+		  					<span>
+		  						姓名:
+		  					</span>
+		  					<u>{{prescriptionDetail.patientName}}</u>
+		  				</p>
+		  				<p style="text-indent: 0;">
+		  					<span>
+		  						性别:
+		  					</span>
+		  					<u>{{prescriptionDetail.sex}}</u>
+		  				</p>
+		  				<p>
+		  					<span>
+		  						年龄:
+		  					</span>
+		  					<u>{{prescriptionDetail.age}}</u>
+		  				</p>
+		  			</li>
+		  			<li>
+		  				<p>
+		  					<span>
+		  						门诊病历号:
+		  					</span>
+		  					<!--2132132123312-->
+		  				</p>
+		  				<p>
+		  					<span>
+		  						科室:
+		  					</span>
+		  					<u>
+		  						{{prescriptionDetail.deptName}}
+		  					</u>
+		  				</p>
+		  			</li>
+		  			<li>
+		  				<p>
+		  					<span>
+		  						初步诊断:
+		  					</span>
+		  					<u>
+		  					{{prescriptionDetail.preliminaryDiagnosis}}
+		  					</u>
+		  				</p>
+		  			</li>
+		  		</ul>
+		  		<h4>
+		  			Rp
+		  		</h4>
+		  		<ul class="rp">
+		  			<li ng-repeat="drugList in prescriptionDetail.drugList">
+		  				<p>{{drugList.id}}.{{drugList.drugName}}</p>
+		  				<span>{{drugList.specifications}} x{{drugList.number}}</span>
+		  				<u>用法用量: {{drugList.usage  + '  '+drugList.frequency + '  一次'+drugList.unitDose}}</u>
+		  			</li>
+		  			<li>
+		  				<p>注意事项</p>
+		  				<u>{{prescriptionDetail.doctorAdvice}}</u>
+		  			</li>
+		  		</ul>
+		  		<ul class="autograph">
+		  			<li>
+			  			<span>诊断医生:</span>
+			  			<i><img ng-src="{{prescriptionDetail.diagDoctorSign}}"></i>
+		  			</li>
+		  			<li>
+			  			<span>审核药师:</span>
+			  			<i><img ng-src="{{prescriptionDetail.auditDoctorSign}}"></i>
+		  			</li>
+		  			<li>
+			  			<span>处方医生:</span>
+			  			<i><img ng-src="{{prescriptionDetail.diagDoctorSign}}"></i>
+		  			</li>
+		  			<li>
+			  			<span>处方药师:</span>
+			  			<i><img ng-src="{{prescriptionDetail.auditDoctorSign}}"></i>
+		  			</li>
+		  		</ul>
+		  		<p class="zhu">
+		  			注:此方仅当天生效
+		  		</p>
+	  		</div>
+  		</div>
+		<ul class="details-3">
+			<li>
+				<p>
+					<span>为了避免患者在药店长时间等待，</span>
+				</p>
+			</li>
+			<li>
+				<p>
+					<span>请在<span style="font-size: 20px;">{{dateTime}}</span>秒内完成处方审核</span>
+				</p>
+			</li>
+			<li>
+				<a class="login-submit clnotpass" ng-class="{true:'passliselect',false:''}[isnotpass]" href="javascript:;" ng-click="noPassAction()">不通过</a>
+				<a class="login-submit clpass" ng-class="{true:'passliselect',false:''}[ispass]" href="javascript:;" ng-click="passAction()">通过</a>
+			</li>
+			<li class="liclearfloat proli">
+				<p>
+					<span>温馨提示：处方审核会用到您的电子证书进行签名</span>
+				</p>
+			</li>
+			<li class="notpassAction" ng-if="isnotpass">
+				<textarea ng-model="notpass.Describe"></textarea>
+				<a class="login-submit" href="javascript:;" ng-class="{true:'passliselect',false:''}[isnotpass]" ng-click="notpassSubmit()">提交</a>
+			</li>
+			<li class="recordli">
+				<p>
+					<span>审核记录</span>
+				</p>
+			</li>
+			<li ng-repeat="AHList in prescriptionDetail.auditHistoryList">
+				<p>
+					<span>{{AHList.updateDate | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+				</p>
+				<p >
+					<!--<span>审核{{AHList.aduitStatus==0 ? '不通过' : '通过'}}，药师{{AHList.doctorName}}</span>-->
+					<span ng-if='AHList.aduitStatus == 1'>未审核</span>
+					<span ng-if='AHList.aduitStatus == 2'>审核中</span>
+					<span ng-if='AHList.aduitStatus == 3'>审核通过</span>
+					<span ng-if='AHList.aduitStatus == 4'>审核不通过</span>
+					<span ng-if='AHList.aduitStatus == 5'>关闭</span>药师:{{AHList.doctorName}}<br/>
+				</p>
+				<p ng-if="AHList.aduitStatus==4">
+					<span>理由：{{AHList.reason}}</span>
+				</p>
+			</li>
+			
+		</ul>
+	</div>
+
+</div>

@@ -1,0 +1,41 @@
+<style type="text/css">
+	.main {
+		background: #eee;
+	}
+</style>
+<div class="user">
+	<div class="page">
+		<ul>
+			<!-- <li ng-click="isPage('number')" ng-class="{'active':isHide == 'number'}">修改账号密码</li> -->
+			<li ng-click="isPage('autograph')" ng-class="{'active':isHide == 'autograph'}">修改签名密码</li>
+		</ul>
+	</div>
+	<div class="modify-number" ng-if='isHide == "number"'>
+		<div class="content">
+			<h3>修改账号密码</h3>
+			<ul>
+				<li><span>原密码:</span><input style="display:none" autocomplete="off" name="name"><input ng-model='number.oldPassword' ng-change='numberOldChange()' type="Password" maxlength="16"></li>
+				<li class="tishi"><span>新密码:</span><input ng-model='number.newPassword'  ng-change='numberNewChange()' type="Password"  maxlength="16"></li>
+				<p>6-16位数字、字母或英文字符、字母区分大小写</p>
+				<li ng-class="{'tishi':numberWarn != ''}"><span>密码确认:</span><input ng-model='number.cmNewPassword'  ng-change='numberCmNewChange()' type="Password"  maxlength="16"></li>
+				<p style="text-indent: 25px;" ng-if="numberWarn != ''" class="autographWarn" ng-bind="numberWarn"></p>
+			</ul>
+			<button>确定</button>
+		</div>
+	</div>
+	<div class="modify-autograph" ng-if='isHide == "autograph"'>
+		<div class="content">
+			<h3>修改签名密码(6位数字)</h3>
+			<ul>
+				<li><span>原密码:</span><input style="display:none" autocomplete="off" name="name"><input ng-change='autographOldChange()' ng-model="autograph.oldPassword" type="Password" maxlength="6"></li>
+				<li><span>新密码:</span><input ng-change='autographNewChange()' ng-model="autograph.newPassword" type="Password"  maxlength="6"></li>
+				<li ng-class="{'tishi':autographWarn != ''}">
+					<span>密码确认:</span>
+					<input ng-change='autographCmNewChange()' ng-model="autograph.cmNewPassword" type="Password"  maxlength="6">
+				</li>
+				<p ng-if="autographWarn != ''" class="autographWarn" ng-bind="autographWarn"></p>
+			</ul>
+			<button ng-click="autographClick()">确定</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+<style>
+	.main{
+    	margin: 0 !important;
+	}
+</style>
+
+
+
+
+<div class="agreement" ng-init="initAgreement()" >
+	<div class="head">
+		<div class="content" >
+			<div class="logo"><img src="../../images/icon_logo.png" /></div>
+		  
+		</div>
+		
+	</div>
+	<div class="contentText">
+		<ul class="details-1">
+			<li>
+				<p>
+					<span>服务协议</span>
+				</p>
+			</li>
+		</ul>
+		<div class="details-2">
+			<h2 class="deH2">{{httpTitle}}</h2>
+			<div ng-bind-html="httpText | to_trusted"></div>
+		</div>
+		
+	</div>
+	
+</div>

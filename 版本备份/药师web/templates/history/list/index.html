@@ -1,0 +1,28 @@
+<div class="history">
+	<div class="list">
+		<div class="title">
+			<span>处方编号</span>
+			<span>审核结果</span>
+			<span>审核药师</span>
+			<span>审核时间</span>
+			<span>操作</span>
+		</div>
+		<ul>
+			<li ng-repeat="x in list.historyList">
+				<span ng-bind="x.orderNo"></span>
+				<span ng-if="x.aduitStatus == '1'">未审核</span>
+				<span ng-if="x.aduitStatus == '2'">审核中</span>
+				<span ng-if="x.aduitStatus == '3'">审核通过</span>
+				<span ng-if="x.aduitStatus == '4'">审核不通过</span>
+				<span ng-if="x.aduitStatus == '5'">关闭</span>
+				<span ng-bind="x.doctorName"></span>
+				<span ng-bind="x.createDate | date:'yyyy-MM-dd HH:mm'"></span>
+				<span><a ui-sref="history.details({id:x.orderNo,is:x.aduitStatus})">查看</a></span>
+			</li>
+		</ul>
+	</div>
+	<div class="page">
+		<div ui-pagination conf="conf"></div>
+	</div>
+	<div ui-view></div>
+</div>

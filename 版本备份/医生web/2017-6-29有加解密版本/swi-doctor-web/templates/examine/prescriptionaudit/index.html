@@ -1,0 +1,192 @@
+<style>
+	.main{
+    	margin-top: 0 !important;
+	}
+</style>
+
+<div class="prescriptionaudit"  ng-init="getPDetail()"  >
+	
+	
+    
+    <script type="text/ng-template" id="timeoutPrompt">
+        <div class="ngdialog-message">
+            <p >审单时间已超时，即将返回接单页面。</p>
+        </div>
+    </script>
+    <script type="text/ng-template" id="chiefComplaintText">
+        <div class="ngdialog-message">
+            <p >请填写主诉/现病史与初步诊断理由。</p>
+        </div>
+    </script>
+    
+	<script type="text/ng-template" id="voerWenZhen">
+		
+        <div class="ngdialog-message">
+            <p >您还没有为患者开处方：</p>
+            <p ><a class="login-submit" href="javascript:;"  ng-click="goPrescribe()" >去开处方</a></p>
+           	<p ><a class="login-submit" href="javascript:;"  ng-click="goTriallohandle()" >不需要开处方，结束问诊</a></p>
+        </div>
+    </script>
+    
+    <script type="text/ng-template" id="RCIDialogId">
+		
+	        <div class="ngdialog-message">
+	            <p class="RCIDtitle">取消问诊原因</p>
+				<p class="yyone" ng-class="{true:'isClickYY',false:''}[isweixy]"><a href="javascript:;" class="on" ng-class="{true:'icon-icon_check_pre',false:'icon-icon_check_normal'}[isweixy]"  ng-click="toggleRememberXY(0)"></a>患者长时间未响应</p>
+	        	<p class="yytwo" ng-class="{true:'isClickYY yypadding',false:''}[isqita]" ><a href="javascript:;" class="on"  ng-class="{true:'icon-icon_check_pre',false:'icon-icon_check_normal'}[isqita]" ng-click="toggleRememberXY(1)"></a>其它(需填写原因)&nbsp;</p>
+	         	<p class="teatT" ng-if="isqita"><textarea  ng-model="form.yyshuoming" placeholder="请填写取消原因，50字内。(必填)"  ></textarea></p>
+	        </div>
+	        <div class="ngdialog-buttons">
+	        	
+	            <a class="login-submit close-this-dialog quxiao" href="javascript:;"  ng-click="closeThisDialog(0)" >取消</a>
+	            <a class="login-submit queding" href="javascript:;"  ng-click="yySubmit()" >提交</a>
+	            
+	        </div>
+
+       
+    </script>
+    
+    <script type="text/ng-template" id="PWDDialogId">
+	
+      
+	        <div  ng-if="!inputPwdShow" class="ngdialog-message">
+	        	<div ng-if="!PWDandPro">
+		            <p class="mimatitle">输入签名密码</p>
+					<p>
+						<input style="display:none" autocomplete="off" name="name">
+		            	<input type="password" name="name" id="mypassword"  maxlength="6" class="form-control password" ng-change="inputChange()" onkeyup="this.value=this.value.replace(/[^\d]/ig,'')"  ng-model="form.inputpassword"  placeholder="输入密码" autocomplete="off" >
+		            </p>
+	            </div>
+	            <!--<p class="error" ng-if="inputPwdShow">签名密码错误，请重新输入。</p> -->
+	            
+	            <div ng-if="PWDandPro">
+			    
+			            <p class="proText">{{submitProText}}</p>
+			            <p>
+			            	<a class="login-submit havaBG" href="javascript:;"  ng-click="closeThisDialog()" ng-if="isSubmit">确认</a>
+			      		</p>
+		        </div>
+	        </div>
+	       
+	       <div  ng-if="inputPwdShow" class="ngdialog-message">
+	            <p class="mimatitle">处方签名密码错误，请重试。</p>
+				<p>
+					<a class="login-submit close-this-dialog wangjipassword" href="javascript:;"  ng-click="wangjipassword()" >忘记密码</a>
+	            	<a class="login-submit paswordRetry" href="javascript:;"  ng-click="paswordRetry()" >重试</a>
+	            </p>
+	            
+	        </div>
+	        
+    
+    </script>
+    
+    
+    <script type="text/ng-template" id="UpdatePWDDialogId">
+    	<div ng-if="!showChangeYZM">
+			<div class="ngdialog-message">
+				<p class="updataPwdTitle">忘记处方签名密码</p>
+	        	<p class="upp1">手机号：
+	        		<input type="text" class="form-control phone1"  ng-model="form.inputPhone"  placeholder="输入手机号" autocomplete="off" >
+	        	</p>
+	            <p class="upp2">验证码：
+					<input style="display:none" autocomplete="off" name="name">
+	           		<input type="text" class="form-control inputYZMPhone"   ng-model="form.inputYZM"  placeholder="输入校验码" autocomplete="off" >
+	   				<a class="" ng-if="!userPhoneStatus" href="javascript:;"  ng-click="changeYZMStatus()" >发送校验码</a>
+	        		<a class="" href="javascript:;" ng-if="userPhoneStatus" >重发({{YZMTime}})</a>
+	        	
+	            	
+	            </p>
+	            <p ng-if="inputYZMShow" style="color: #FF3C00;">校验码错误 </p>
+	        </div>
+	        <div class="ngdialog-buttons">
+	             <a class="login-submit close-this-dialog" href="javascript:;"  ng-click="closeYanzhengma()" >下一步</a>
+	        </div>
+        </div>
+        <div ng-if="showChangeYZM">
+			<div class="ngdialog-message">
+				<p class="updataPwdTitle">重置处方签名密码</p>
+	        	<p class="upp1">
+	        		<label style="margin-right: 16px;">新密码：</label> 
+	        		<input type="password" class="form-control phone1"  maxlength="6" ng-model="form.inputNewPWD" onkeyup="this.value=this.value.replace(/[^\d]/ig,'')"   placeholder="" autocomplete="off" >
+	        	</p>
+	            <p class="upp2">
+	            	<label>密码确认：</label> 
+	           		<input type="password" class="form-control phone1"  maxlength="6"   ng-model="form.inputNewPWDRepeat"  onkeyup="this.value=this.value.replace(/[^\d]/ig,'')"  placeholder="" autocomplete="off" >
+	   				
+	            </p>
+	            <p style="font-size: 14px;color: #ff3c00;" ng-if="ispwdcfPro">请确认两次密码都准确无误。</p>
+	        </div>
+	        <div class="ngdialog-buttons">
+	             <a class="login-submit close-this-dialog" href="javascript:;"  ng-click="updataPWD()" >确定</a>
+	        </div>
+        </div>
+    </script>
+
+	
+	<!--<div class="screen-list"  >
+		视频
+	</div>-->
+	
+	
+	<div class="head">
+		<div class="content" >
+			<!--<div class="logo"><img src="../../images/icon_logo.png" /></div>-->
+			<div class="suspensionOrder"><a href="javascript:;" class="login-submit" ng-click="pauseInquiry()" >暂停接单</a>12人候诊中</div> 
+		  	<div  class="cdt">
+				接诊时长 {{countDownTime | date:'mm:ss'}}
+			</div>
+			<div class="stopOrder" ><a href="javascript:;" style="border: none;" class="login-submit" ng-click="showquitIs()" ><i class="icon-icon_more"></i></a></div>
+			<div class="stopOrder"><a href="javascript:;" class="login-submit" ng-click="pauseOver(0)" >结束问诊</a></div>
+			<div class="pop3" ng-class="{'show':quitIs}">
+				<p ng-click="quxiaoJieZhen()"><a href="javascript:;">取消接诊</a></p>
+		    	<p ng-click="CCService()"><a href="javascript:;">联系客服</a></p>
+		   </div>	
+		</div>
+		
+	</div>
+	<div class="screen-list"  >
+		 <iframe id="pdf" style=" height:100%;width:100%;    border: none;"  scrolling="no" frameborder="0"></iframe> 
+	</div>
+	<div class="screen-list patientInformation"  >
+		 
+		 <div class="patientRecord">
+			<div class="patientInfo">
+				<span>姓名：<input type="text" maxlength="6" class="form-control username" ng-model="form.username" ng-class="{'userInfoShow':!isSaveUserInfo}" ng-readonly="!isSaveUserInfo" placeholder="姓名" ></span>
+				<span>性别：<input type="text" maxlength="1" class="form-control sex" ng-model="form.sex" ng-class="{'userInfoShow':!isSaveUserInfo}" ng-readonly="!isSaveUserInfo" placeholder="" ></span>
+				<span>年龄：<input type="text" maxlength="3" class="form-control age" ng-model="form.age" ng-class="{'userInfoShow':!isSaveUserInfo}" ng-readonly="!isSaveUserInfo" placeholder="" ></span> 
+				<!--<a href="javascript:;" class="login-submit userInfoSave" ng-if="isSaveUserInfo" ng-click="saveUserInfo()" >保存</a>
+				<a href="javascript:;" class="login-submit userInfoSave" ng-if="!isSaveUserInfo" ng-click="updataUserInfo()" >修改</a>-->
+			</div>
+			<ul>
+				<li>
+					<p class="description">科室：{{form.deptName}}</p>
+				</li>
+				<li>
+					<p class="description">*主诉/现病史：</p>
+					<p><textarea placeholder="需要带入患者提交的病情描述" ng-model="form.chiefComplaint" ></textarea></p>
+				</li>
+				<li>
+					<p class="description">既往病史：</p>
+					<p><textarea placeholder="请填写患者的既往史..." ng-model="form.pastHistory" ></textarea></p>
+				</li>
+				<li>
+					<p class="description">初步诊断：</p>
+					<p><textarea placeholder="请填写初步诊断..." ng-model="form.preliminaryDiagnosis" ></textarea></p>
+				</li>
+				<li>
+					<p class="description">治疗意见：</p>
+					<p><textarea placeholder="请填写治疗意见…" ng-model="form.doctorAdvice" ></textarea></p>
+				</li>
+				<li>
+					<span>手机： <input type="text" maxlength="11" class="form-control phone" ng-class="{'userInfoShow':!isSaveUserPhone}" ng-readonly="!isSaveUserPhone" onkeyup="this.value=this.value.replace(/[^\d]/ig,'')"  ng-model="form.phone"  placeholder="手机号码11位" ></span> 
+					<!--<a href="javascript:;" class="login-submit userPhoneSave" ng-if="isSaveUserPhone" ng-click="saveUserPhone()" >保存</a>
+					<a href="javascript:;" class="login-submit userPhoneSave" ng-if="!isSaveUserPhone" ng-click="updataUserPhone()" >修改</a>-->
+					<p>请与患者确认接收治疗意见的手机号码是否正确</p>
+				</li>
+			</ul>
+		</div>
+		 <a href="javascript:;" class="login-submit saveCase" ng-click="saveMedicalRecord()" >保存病历</a>
+		 <a href="javascript:;" class="login-submit saveandprescribe" ng-click="pauseOver(1)" >完成诊断并开处方</a>
+	</div>
+	
+</div>

@@ -1,0 +1,253 @@
+
+.login{
+    /*登录*/
+
+    .yyyhttplink{
+        margin-top: 28px;
+        margin-right: 8px;
+        width: 16px;
+        height: 18px;
+        color: #09cacd;
+        text-decoration: none;
+        font-size: 14px;
+        float: left;
+    }
+    .yyyhttplinkAc{
+        font-size: 12px;
+        color: #666666;
+        text-decoration: none;
+        float: left;
+        padding-top: 26px;
+    }
+    .prompt{
+        color: #ff3c00;
+        font-size: 12px;
+        padding-left: 8px;
+        height:44px;
+        line-height: 44px;
+    }
+    .logo{
+        width: 200px;
+        height: 60px;
+        background: #09cacd;
+        text-align: center;
+        line-height: 60px;
+    }
+    .logo img{
+        vertical-align: middle;
+        height: 50px;
+        width: 75px;
+    }
+    .login-bg{
+        position: fixed;
+        top:0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(./images/bg.png);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 10;
+        h3{
+            position:absolute;
+            top:50%;
+             left:50%; 
+            transform:translate(-50%,-50%); 
+            -webkit-transform:translate(-50%,-50%); 
+            -moz-transform:translate(-50%,-50%);
+             -ms-transform:translate(-50%,-50%);
+             z-index:11;
+            color:#fff;
+            text-align:center;
+            width:386px;
+           margin-top: -210px;
+            height:45px;
+            i{
+                float:left;
+                display:block;
+                font-size:44px;
+            }
+            span{
+                float:left;
+                display:block;
+                font-size:22px;
+                margin:6px 10px 0 6px;
+            }
+            p{
+                 float: left;
+                 display: block;
+                 font-size: 26px;
+                 line-height: 41px;
+            }
+        }
+    }
+    .login-main{
+        background-color: #fff;
+        width: 500px;
+        left: 50%;
+        position: absolute;
+        margin-left: -250px;
+        top: 50%;
+        margin-top: -170px;
+        height:340px;
+        // padding: 50px;
+        .login-title{
+            overflow:hidden;
+            margin-bottom: 28px;
+            ul{
+                display:block;
+                width:100%;
+                height:46px;
+                line-height:46px;
+                background-color:#ededef;
+                li{
+                    float:left;
+                    display:block;
+                    width:50%;
+                    text-align:center;
+                    cursor:pointer;
+                    font-size:14px;
+                }
+                li:nth-child(1){
+                    margin-left:-1px;
+                }
+                span{
+                    float:left;
+                    display:block;
+                    width:1px;
+                    height:30px;
+                    background: #bfbfbf;
+                    margin: 8px 0px;
+                }
+            }
+            .active{
+                border-bottom: 2px solid #09CACD;
+                color:#09CACD;
+                font-weight:bold;
+            }
+        }
+        .login-form{
+            padding:0 90px 0 90px;
+            overflow: hidden;
+        }
+    }
+    .verification{
+        height: 40px;
+        font-size:12px;
+        color:#828282;
+        line-height:35px;
+    }
+    .login-logo{
+        margin-bottom: 42px;
+        text-align: center;
+    }
+    .login-input{
+        margin-bottom: 44px;
+        border-radius: 4px;
+        border:1px solid #b1b1b1;
+        a{
+            display: block;
+            float: right;
+            text-align: center;
+            width: 124px;
+            border-left: 1px solid #b1b1b1;
+            color: #828282;
+            margin: 4px 0;
+            line-height: 30px;
+            cursor: pointer;
+        }
+    }
+    .login-input .form-control{
+        width:86%;
+        height: 38px;
+        color: #666666;
+        font-size: 14px;
+        border-radius: 10px;
+        outline:none;
+        border:0;
+    }
+    .input-group-addon{
+            float: left;
+            height: 38px;
+            padding: 0px 10px;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 40px;
+            color: #555;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+    }
+    .username{
+        background: url(./images/icon_phone.png) no-repeat 14px 15px;
+    }
+    .password{
+        background: url(./images/icon_password.png) no-repeat 14px 15px;
+    }
+    .login-input .form-control::-webkit-input-placeholder {
+        color: #d1d1d1;
+    }
+    .login-input .form-control::-moz-placeholder {
+        color: #d1d1d1;
+    }
+    .login-handle{
+        margin-top: 11px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    .login-handle a{
+        color: #666666;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    .remember{
+        float: left;
+        padding-left: 35px;
+        background: url(./images/rb_pre.png) no-repeat 5px 2px;
+    }
+    .remember.on{
+        background: url(./images/_rb.png) no-repeat 5px 2px;
+    }
+    
+    .rememberXY{
+        float: left;
+        background: url(./images/rb_pre2.png) no-repeat 2px 3px;
+    }
+    .rememberXY.on{
+        background: url(./images/rb_pre2_no.png) no-repeat 2px 3px;
+    }
+    
+    
+    .forgot{
+        float: right;
+    }
+    .login-form .login-submit{
+        height: 40px;
+        line-height: 40px;
+        background: #09CACD;
+        text-decoration: none;
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+        display: block;
+        width: 100%;
+        border-radius: 4px;
+        letter-spacing: 5px;
+    }
+    .login-form .login-submit:active{
+        color: #fff !important;
+        background: #07bob2 !important;
+        outline: 0 !important;
+        -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125) !important;
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125) !important;
+    }
+    a:focus {  
+     outline:none;  
+     -moz-outline:none;  
+    }
+}
+
+
+
+

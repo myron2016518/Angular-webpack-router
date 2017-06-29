@@ -1,0 +1,100 @@
+.user{
+  min-height: 800px;
+  width: 100%;
+  overflow: hidden;
+  .page{
+    float: left;
+    width: 180px;
+    height: 100%;
+    background: #fff;
+    min-height: 800px;
+    ul{
+      display: block;
+      padding-top:40px; 
+      li{
+        width: 100%;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+      }
+      .active{
+        background: #e6ebed
+      }
+    }
+  }
+  .modify-number{
+    float: right;
+    width: 900px;
+    min-height: 800px;
+    background: #fff;
+
+  }
+  .modify-autograph{
+    float: right;
+     width: 900px;
+     min-height: 800px;
+     background: #fff;
+  }
+  .content{
+    overflow: hidden;
+    padding: 186px 0 0 284px;
+    h3{
+      font-size: 14px;
+      color:#666;
+      padding-bottom: 45px;
+    }
+    ul{
+      display: block;
+      width: 321px;
+      overflow: hidden;
+      li{
+        display: block;
+        width: 100%;
+        padding-bottom: 37px; 
+        overflow: hidden;
+        input{ 
+          float: left; 
+          display: block;
+          width: 238px;
+          height: 38px;
+          border: 1px solid #b1b1b1;
+          font-size: 18px;
+          text-indent: 5px;
+        }
+        span{ 
+          float: left; 
+          display: block; 
+          width: 80px;
+          text-align: left;
+          height: 40px;
+          line-height: 40px;
+          color: #666;
+        }
+      }
+      .tishi{
+        padding-bottom: 0;
+      }
+      p{
+        line-height: 37px;
+        font-size: 12px;
+        color: #666;
+        text-indent: 65px;
+      }
+    }
+    button{
+        width: 321px;
+        height: 40px;
+        background: #09cacd;
+        border: 0;
+        font-size: 16px;
+        color:#fff;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .autographWarn{
+      color: #f00;
+      text-indent: 80px;
+    }
+
+  }
+}

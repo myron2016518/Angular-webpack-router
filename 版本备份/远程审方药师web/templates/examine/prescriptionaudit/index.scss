@@ -1,0 +1,563 @@
+.prescriptionaudit{
+  .liclearfloat{
+    clear: both;    
+  }
+  .proli span{
+      font-size: 14px;
+      color: #ff3c00;
+  }
+  .recordli span{
+      font-size: 20px;
+      font-weight: bold;
+  }
+  .details-1{
+    border-bottom: 1px solid #d1d1d1;
+    height: 60px;
+    line-height: 60px;
+    li{
+        span{
+          font-size: 18px;
+          color: #666;
+        }
+        .login-submit{
+            margin-top: 13px;
+            margin-right: 40px;
+            float: right;
+            height: 32px;
+            line-height: 32px;
+            background: #7eb2b3;
+            text-decoration: none;
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            display: block;
+            width: 128px;
+            border-radius: 4px;
+            letter-spacing: 2px;
+            outline: 0;
+        }
+        .login-submit:active{
+            color: #fff;
+            background: #07bob2;
+            outline: 0;
+            -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+        }
+    }
+    
+  }
+  .screen-list{
+    text-align: -webkit-center;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 40px;
+  }
+  .details-2{
+    float: left;
+    height: 700px;
+    display: block;
+    width: 495px;
+    margin-top: 30px;
+    margin-left: 70px;
+    padding: 34px 30px 34px 0px;
+    border: 1px solid #e1e1e1;
+    overflow: hidden;
+    .dlifirst{
+          height: 60px;
+      }
+    li{
+      text-align: left;
+      text-align: -webkit-left;
+      width: 100%;
+      display: block;
+      color: #666;
+      font-size: 10px;
+      .dTitle-2{
+         margin-left: 40%;
+         float: left;
+         font-size: 20px; 
+         font-weight: bold;
+         span{
+             margin-bottom: 10px;
+         }
+      }
+      .dname-2{
+         float: right;
+         letter-spacing: 4px;
+         width: 34px;
+         font-size: 12px; 
+         border: 1px solid #a1a1a1;
+         padding: 8px 6px 8px 8px;
+      }
+      span{
+        padding-right: 8px;
+      }
+    }
+  }
+  .details-3{
+    display: block;
+    width: atuo;
+    margin-top: 50px;
+    padding-left: 60px;
+    text-align: -webkit-left;
+    text-align: left;
+    overflow: hidden;
+    li{
+      display: block;
+      color: #666;
+      line-height: 36px;
+      font-size: 14px;
+      span{
+        padding-right: 8px;
+      }
+      .login-submit{
+        height: 40px;
+        line-height: 40px;
+        border: 1px solid #a1a1a1;
+        text-decoration: none;
+        font-size: 16px;
+        color: #666666;
+        text-align: center;
+        display: block;
+        width: 36%;
+        border-radius: 4px;
+        letter-spacing: 2px;
+        margin-top: 10px;
+        outline: 0;
+      }
+      .passliselect{
+        border: 1px solid #09CACD;
+        color: #fff;
+        background: #09CACD;
+      }
+      .login-submit:active{
+        color: #fff;
+        background: #09CACD;
+        outline: 0;
+        -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+      }
+      .clnotpass{
+          float: left;
+      }
+      .clpass{
+          float: left;
+          margin: 10px 50px;
+      }
+    }
+    .notpassAction{
+        textarea{
+          width: 83%;
+          height: 100px; 
+        }
+        .login-submit{
+        width: 25%;
+        margin-top: 0px;
+        margin-left: 25%;
+      }
+          
+    }
+  }
+  .left{
+        margin-left: 70px;
+        margin-top: 20px;
+        width: 493px;
+        background: #fff;
+        text-align: left;
+        padding-bottom: 20px;
+        float: left;
+        .title{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding-top: 48px;
+            h3{
+                text-align: center;
+                flex-grow:3;
+                font-size: 20px;
+                line-height: 29px;
+            }
+            .type{
+                width: 100px;
+                p{
+                    display: block;
+                    width: 68px;
+                    border:1px solid #b1b1b1;
+                    text-align: center;
+                    font-size: 16px;
+                    padding: 6px 0px;
+                }    
+            }
+            div{
+                width: 100px;    
+            }
+        }
+        .user-text{
+            display: block;
+            overflow: hidden;
+            margin: 32px 35px;
+            li{
+                display: block;
+                line-height: 36px;
+                overflow: hidden;
+                p{
+                    float: left;
+                    width: 50%;
+                    font-size: 14px;
+                }
+                p:nth-child(2){
+                }
+            }
+            li:nth-child(2){
+                p{
+                    width: 33.33%;
+                }
+            }
+        }
+        h4{
+            margin: 0 35px;
+            font-size: 20px
+        }
+
+        .rp{
+            display: block;
+            margin: 0 35px;
+            li{
+                padding-top: 10px;
+                display:block;
+                line-height: 30px;
+                font-size: 14px;
+            }
+        }
+        .autograph{
+            display: block;
+            overflow: hidden;
+            margin: 0 35px;
+            padding-top: 40px;
+            li{
+                float: left;
+                display: block;
+                width: 50%;
+                padding-bottom: 22px;
+                overflow: hidden;
+                span{
+                    // line-height:64px; 
+                    display: block;
+                    float: left;
+                    padding: 17px 0 0 10px;
+                }
+                img{
+                    height: 50px;
+                    width: 134px;
+                }
+                i{
+                  display: block;
+                  float: right;
+                }
+            }
+        }
+        .zhu{
+          padding-left: 35px;
+        }
+    }
+}
+
+
+.ngdialog-inputYanzhenma{
+    font-size: 16px;
+    color: #666;
+    
+    
+    .ngdialog-message{
+        padding-left: 35px;
+        p{
+            padding-top: 30px;
+            font-size: 14px;
+            color: #ff3c00;
+        }
+        .form-control{
+            height: 33px;
+            border:#b1b1b1 1px solid;
+            color: #999999;
+            font-size: 14px;
+            border-radius: 4px;
+            outline:none;
+            text-indent: 5px;
+        }
+        .login-submit{
+            height: 32px;
+            line-height: 32px;
+            background: #09CACD;
+            text-decoration: none;
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            display: inline-block;
+            width: 120px;
+            border-radius: 4px;
+            letter-spacing: 2px;
+            margin-left: 10px;
+          }
+          .login-submit:active{
+            color: #fff;
+            background: #07bob2;
+            outline: 0;
+            border:none;
+            -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          }
+    }
+    .ngdialog-buttons{
+        padding: 20px 0px;
+        text-align: -webkit-center;
+        text-align: center;
+        .login-submit{
+            height: 40px;
+            line-height: 40px;
+            background: #09CACD;
+            text-decoration: none;
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            display: inline-block;
+            width: 180px;
+            border-radius: 4px;
+            letter-spacing: 2px;
+          }
+          .login-submit:active{
+            color: #fff;
+            background: #07bob2;
+            outline: 0;
+            border:none;
+            -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          } 
+        p{
+            padding-top: 30px;
+            font-size: 14px;
+            color: #ff3c00;
+        }
+    }
+    
+    
+}
+
+.ngdialog-RCI {
+    .ngdialog-content {
+        padding: 0px !important;
+        .ngdialog-message {
+            margin-bottom: 0px !important;
+            p {
+                text-align: -webkit-center;
+                text-align: center;
+                font-size: 16px;
+                color: #666;
+            }
+            a{
+                color: #666;
+                font-size: 22px;
+                margin-right: 14px;
+                vertical-align: text-top;
+                outline: 0;
+            }
+            
+            textarea{
+                width: 346px;
+                height: 86px;
+                color: #666;
+                font-size: 14px;
+                border: 1px solid #E0E0E0;
+                margin-bottom: 20px;
+                text-indent: 5px;
+            }
+            .RCIDtitle{
+                border-bottom: 1px solid #CCCCCC;
+                padding: 14px 0px 14px 0px;
+            }
+            .yyone{
+                
+                padding-top: 32px;
+            }
+            .yytwo{
+                padding: 24px 0px 42px 0px;
+            }
+            .isClickYY{
+                color: #09CACD;
+            }
+            .yypadding{
+                padding: 24px 0px 22px 0px;
+            }
+            .mimatitle{
+                padding: 50px 0px 40px 0px;
+            }
+            .proText{
+                padding: 80px 0px 30px 0px;
+                font-size: 22px;
+            }
+            .havaBG{
+                background-color: #09CACD !important;
+                color: #fff !important;
+            }
+            
+            .form-control {
+                height: 40px;
+                border: #b1b1b1 1px solid;
+                color: #999999;
+                font-size: 14px;
+                border-radius: 4px;
+                outline: none;
+                text-indent: 5px;
+            }
+            .error{
+                padding-top: 30px;
+                color: #ff3c00;
+            }
+            .login-submit {
+                height: 40px;
+                line-height: 40px;
+                text-decoration: none;
+                font-size: 16px;
+                text-align: center;
+                display: inline-block;
+                width: 160px;
+                border-radius: 4px;
+                letter-spacing: 2px;
+                background: none;
+                color: #09CACD;
+                border: #09CACD 1px solid;
+            }
+            .login-submit:active {
+                background: #07bob2;
+                outline: 0;
+                -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+                box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+            }
+            .wangjipassword{
+                margin-right: 24px;
+            }
+        }
+        .ngdialog-buttons {
+            text-align: -webkit-center;
+            text-align: center;
+            margin-bottom: 30px;
+            .form-control {
+                height: 40px;
+                border: #b1b1b1 1px solid;
+                color: #999999;
+                font-size: 14px;
+                border-radius: 4px;
+                outline: none;
+                text-indent: 5px;
+            }
+            .login-submit {
+                height: 40px;
+                line-height: 40px;
+                background: #09CACD;
+                text-decoration: none;
+                font-size: 16px;
+                color: #fff;
+                text-align: center;
+                display: inline-block;
+                width: 160px;
+                border-radius: 4px;
+                letter-spacing: 2px;
+            }
+            .login-submit:active {
+                background: #07bob2;
+                outline: 0;
+                -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+                box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+            }
+            p {
+                padding-top: 30px;
+                font-size: 14px;
+                color: #ff3c00;
+            }
+            .quxiao{
+                margin-right: 24px;
+                background: none;
+                color: #09CACD;
+                border: #09CACD 1px solid;
+            }
+        }
+    }
+}
+
+
+
+
+.ngdialog-UpdatePWD {
+    .ngdialog-content {
+        padding: 0px !important;
+        .ngdialog-message {
+            margin-bottom: 0px !important;
+            p {
+                text-align: -webkit-center;
+                text-align: center;
+                font-size: 16px;
+                color: #666;
+                .phone1{
+                    width: 230px;
+                }
+            }
+            .updataPwdTitle{
+                padding: 30px 0px 24px 0px;
+            }
+            .upp1{
+                margin-bottom: 20px;
+            }
+            .upp2{
+                margin-bottom: 5px;
+                .inputYZMPhone{
+                    width: 130px;
+                }
+                a{
+                    background-color:#E5E5E5 ;
+                    color: #666;
+                    font-size: 14px;
+                    height: 40px;
+                    line-height: 40px;
+                    text-decoration: none;
+                    text-align: center;
+                    display: inline-block;
+                    width: 100px;
+                }
+            }
+            .form-control {
+                height: 40px;
+                border: #b1b1b1 1px solid;
+                color: #999999;
+                font-size: 14px;
+                border-radius: 4px;
+                outline: none;
+                text-indent: 5px;
+            }
+            
+        }
+        .ngdialog-buttons {
+            text-align: -webkit-center;
+            text-align: center;
+            .login-submit {
+                margin-top: 15px;
+                height: 40px;
+                line-height: 40px;
+                background: #09CACD;
+                text-decoration: none;
+                font-size: 16px;
+                color: #fff;
+                text-align: center;
+                display: inline-block;
+                width: 160px;
+                border-radius: 4px;
+                letter-spacing: 2px;
+            }
+            .login-submit:active {
+                background: #07bob2;
+                outline: 0;
+                -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+                box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+            }
+            
+        }
+    }
+}

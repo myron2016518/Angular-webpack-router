@@ -1,0 +1,53 @@
+.historyrx{
+  overflow: hidden;
+  width: 100%;
+  .list{
+    overflow: hidden;
+    width: auto;
+    margin: 38px 34px;
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    .title{
+      height: 60px;
+      line-height: 60px;
+      background: #939b9e;
+      color: #fff;
+      span{
+        float: left;
+        display: block;
+        width: 20%;
+        text-align: center;
+      }
+    }
+    ul{
+      display: block;
+      width: 100%;
+      overflow:hidden;
+      height: 600px;
+      li{
+        display: block;
+        overflow: hidden;
+        height: 60px;
+        span{
+          float:left;
+          display: block;
+          width: 20%;
+          text-align: center;
+          line-height: 60px;
+          color:#666;
+          a{
+            cursor: pointer;
+            color:#09cacd;
+          }
+        }
+      }
+      li:nth-child(even){
+        background: #e6ebed;
+      }
+    }
+  }
+  .page{
+    text-align: center;
+  }
+}
